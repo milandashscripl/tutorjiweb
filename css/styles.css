@@ -33,7 +33,7 @@ body {
   button:hover {
     background: #0056b3;
   }
-  .profile{
+  #profile{
     display: flex;
     justify-content: center;
     align-items: center;
