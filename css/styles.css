@@ -13,6 +13,12 @@ body {
   line-height: 1.6;
 }
 
+.main{
+  background: rgba(255, 166, 0, 0.126);
+  height: 100vh;
+  display: flex;
+}
+
 .container {
   width: 40%;
   margin: 20px auto;
