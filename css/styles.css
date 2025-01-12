@@ -13,15 +13,19 @@ body {
   line-height: 1.6;
 }
 
-.main{
+.mainBox{
   background: rgba(255, 166, 0, 0.126);
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .container {
   width: 40%;
-  margin: 20px auto;
+  margin: 20px 0;
   background: linear-gradient(to right, rgb(229, 14, 49), orangered);
   padding: 30px;
   border-radius: 8px;
