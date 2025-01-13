@@ -93,3 +93,12 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       alert('An error occurred while logging in. Please check your connection or try again.');
   }
 });
+
+
+
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  console.log("Logging out....")
+  localStorage.clear();
+  window.location.href = 'login.html'; // Redirect to login page
+});
