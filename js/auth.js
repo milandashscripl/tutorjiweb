@@ -21,16 +21,3 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     }
   });
   
-
-// document.getElementById('logoutBtn').addEventListener('click', () => {
-//   console.log("Logging out....")
-//   localStorage.clear();
-//   window.location.href = 'index.html'; // Redirect to login page
-// });
-
-
-document.getElementById('logoutBtn').addEventListener('click', function(){
-    var x = 1;
-    x ++;
-    console.log(x)
-})
