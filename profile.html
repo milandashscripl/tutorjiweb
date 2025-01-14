@@ -25,7 +25,7 @@
   <script src="js/profile.js"></script>
   <script>
 document.getElementById('logoutBtn').addEventListener('click', () => {
-  logoutBtn.innerText = "logging Out..."
+  logoutBtn.innerHTML = `<img src="Spinner@1x-1.0s-200px-200px.gif">`
   localStorage.clear();
   window.location.href = 'index.html'; // Redirect to login page
 });
