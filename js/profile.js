@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     if (response.ok) {
       const user = await response.json();
-      document.getElementById('profilePicture').src = `https://tutorji.onrender.com/uploads/${user.profilePicture}`;
+      document.getElementById('profilePicture').src = `${user.profilePicture}`;
       document.getElementById('name').textContent = user.name;
       document.getElementById('email').textContent = user.email;
       document.getElementById('contact').textContent = user.contact;
