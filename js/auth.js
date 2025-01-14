@@ -25,5 +25,5 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
 document.getElementById('logoutBtn').addEventListener('click', () => {
   console.log("Logging out....")
   localStorage.clear();
-  window.location.href = '../login.html'; // Redirect to login page
+  window.location.href = '../index.html'; // Redirect to login page
 });
