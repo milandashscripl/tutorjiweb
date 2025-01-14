@@ -23,5 +23,12 @@
   </div>
 
   <script src="js/profile.js"></script>
+  <script>
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  logoutBtn.innerText = "logging Out..."
+  localStorage.clear();
+  window.location.href = 'index.html'; // Redirect to login page
+});
+  </script>
 </body>
 </html>
