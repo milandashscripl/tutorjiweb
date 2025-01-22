@@ -14,23 +14,19 @@ body {
 }
 
 .mainBox{
+  width: 100%;
   background: rgba(255, 166, 0, 0.126);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow-y: auto;
   overflow-x: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #ff4081, orangered);
 }
 
 .container {
-  width: 40%;
   margin: 20px 0;
-  background: linear-gradient(to bottom right, #ff4081, orangered);
   padding: 30px;
   border-radius: 8px;
   color: whitesmoke;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
 }
 
@@ -71,28 +67,43 @@ button:hover {
 
 #profile {
   display: flex;
-  justify-content: center;
+  flex-direction: row; /* Arrange items side by side */
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto; /* Center the profile container */
 }
 
 .profilePicture {
-  height: 150px;
-  width: 150px;
+  height: 50%;
+  width: 50%;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-right: 20px; /* Add spacing between the picture and the info */
 }
 
-@media screen and (max-width: 760px) {
-  .container {
-    width: 80%;
-    padding: 20px;
-  }
+.profileInfo {
+  flex: 1; /* Make the info section take the remaining space */
+}
 
-  .profilePicture {
-    height: 120px;
-    width: 120px;
+.profileInfo p {
+  margin: 30px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 760px) {
+  .mainBox{
+    height: 100vh;
+    display: flex;
+    justify-content: center;align-items: center;
+  }
+  #profile{
+    flex-direction: column;
   }
 
   form {
@@ -115,10 +126,6 @@ button:hover {
     padding: 15px;
   }
 
-  .profilePicture {
-    height: 100px;
-    width: 100px;
-  }
 
   input, textarea, button {
     font-size: 14px;
