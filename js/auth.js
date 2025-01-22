@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const role = document.getElementById('role').value; // Capture selected role
-  const roleName = document.getElementById('roleName');p
+  const roleName = document.getElementById('roleName');
   roleName.innerText = role;
   console.log(role)
   try {
