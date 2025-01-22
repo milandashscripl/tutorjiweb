@@ -26,7 +26,7 @@ body {
 .container {
   width: 40%;
   margin: 20px 0;
-  background: linear-gradient(to bottom right, pink, darkorange);
+  background: linear-gradient(to bottom right, #ff4081, orangered);
   padding: 30px;
   border-radius: 8px;
   color: whitesmoke;
