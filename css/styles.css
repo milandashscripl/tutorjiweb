@@ -79,7 +79,6 @@ button:hover {
 .profilePicture {
   height: 50%;
   width: 50%;
-  border-radius: 50%;
   object-fit: cover;
   margin-right: 20px; /* Add spacing between the picture and the info */
 }
@@ -105,7 +104,9 @@ button:hover {
   #profile{
     flex-direction: column;
   }
-
+  .profilePicture{
+  border-radius: 50%;
+  }
   form {
     padding: 0 10px;
   }
