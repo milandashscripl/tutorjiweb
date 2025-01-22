@@ -4,7 +4,8 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const role = document.getElementById('role').value; // Capture selected role
-
+  const roleName = document.getElementById('roleName');p
+  roleName.innerText = role;
   try {
     const response = await fetch('https://tutorji.onrender.com/api/users/login', {
       method: 'POST',
