@@ -50,13 +50,13 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       } else if (role === 'user' && data.role === 'user') {
         window.location.href = 'profile.html';
       } else {
-        alert('Role mismatch. Please check your credentials.');
+        alert('Role mismatch. Please check your credentials.' + role + data.role);
       }
     } else {
       alert('Invalid login credentials');
     }
   } catch (error) {
     console.error('Error during login:', error);
-    alert('An error occurred. Please try again later.');
+    alert('An error occurred. Please try again later.' );
   }
 });
