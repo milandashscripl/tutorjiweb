@@ -6,6 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
   const role = document.getElementById('role').value; // Capture selected role
   const roleName = document.getElementById('roleName');p
   roleName.innerText = role;
+  console.log(role)
   try {
     const response = await fetch('https://tutorji.onrender.com/api/users/login', {
       method: 'POST',
