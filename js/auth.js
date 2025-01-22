@@ -17,9 +17,6 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     if (response.ok) {
       const data = await response.json();
 
-      if (!data.role) {
-        throw new Error('Role not defined in the response.');
-      }
 
       // Save token and user details
       localStorage.setItem('token', data.token);
@@ -30,7 +27,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
       if (role === data.role) {
         if (role === 'admin') {
           window.location.href = 'admin-dashboard.html';
-        } else if (role === 'user') {
+        } else if (role === 'user' || role == '' || !role) {
           window.location.href = 'profile.html';
         }
       } else {
