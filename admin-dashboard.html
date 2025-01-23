@@ -5,15 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 250px;
+      background-color: #555;
+      color: whitesmoke;
+      padding: 20px 0;
+      position: fixed;
+      height: 100%;
+    }
+    
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    
+    .sidebar ul {
+      list-style: none;
+    }
+    
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+    
+    .sidebar ul li a {
+      text-decoration: none;
+      color: whitesmoke;
+      display: block;
+      padding: 10px 20px;
+      transition: background 0.3s;
+    }
+    
+    .sidebar ul li a:hover {
+      background-color: whitesmoke;
+      border-radius: 5px;
+      color: #555;
+    }
+    
+    /* Main Content and Navbar Styling */
+    .main-content {
+      margin-left: 250px;
+      width: calc(100% - 250px);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+
+    .navbar {
+      background-color: #555;
+      color: whitesmoke;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    
+    
+    .navbar .admin-info {
+      display: flex;
+      align-items: center;
+      margin: 0 050px 0 100px;
+    }
+    .toggler{
+     position: absolute; 
+     font-size: 30px;
+     cursor: pointer;
+     background-color: red;
+     padding: 0 10px;
+     border-radius: 0 10px;
+    }
+    .navbar .admin-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .navbar .search-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* width: 100%; */
+    }
+
+    .navbar .search-bar input {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      width: 100%;
+      margin: auto 0;
+    }
+
+    .navbar .search-bar button {
+      padding: 10px 15px;
+      background-color:orangered ;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: auto 0;
+    }
+
+    .navbar .search-bar button:hover {
+      background-color: #333;
+    }
+
+    @media screen and (max-width: 760px){
+      .main-content{
+      margin-left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+      .navbar{
+        flex-direction: column;
+        align-items: start;
+      }
+      .toggler{
+        position: relative;
+      }
+    }
+    /* Main Content Area */
+    .content {
+      padding: 20px; 
+      background-color: #ecf0f1;
+      flex-grow: 1;
+    }
+
+    .content h1 {
+      font-size: 24px;
+      color: #2c3e50;
+    }
+  </style>
 </head>
 <body>
-  <div class="dashboard">
-    <h1>Admin Dashboard</h1>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2></h2>
     <ul>
-      <li><a href="manage-users.html">Manage Users</a></li>
-      <li><a href="manage-web.html">Manage Web/App</a></li>
-      <li><a href="statistics.html">View Statistics</a></li>
+      <li><a href="#"><i>🏠</i> Dashboard</a></li>
+      <li><a href="#"><i>🎓</i> Students</a></li>
+      <li><a href="#"><i>👩‍🏫</i> Teachers</a></li>
+      <li><a href="#"><i>💵</i> Total Fees</a></li>
+      <li><a href="#"><i>📊</i> Profit/Loss</a></li>
+      <li><a href="#"><i>❌</i> Delete Students</a></li>
+      <li><a href="#"><i>❌</i> Delete Teachers</a></li>
     </ul>
   </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="navbar">
+      <span class="toggler" id="toggler" > ⬅ </span>
+      <div class="admin-info">
+        <img src="admin-logo.png" alt="Admin Logo">
+        <span>Admin Name</span>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+      </div>
+    </div>
+    <!-- Content Area -->
+    <div class="content">
+      <h1>Welcome to the Admin Dashboard</h1>
+      <p>Select an option from the sidebar to manage the system.</p>
+    </div>
+  </div>
+  <script>
+    const sidebar = document.querySelector('.sidebar')
+    const mainContent = document.querySelector('.main-content');
+    toggler.addEventListener('click', function(){
+      if(sidebar.style.display == ""){
+      toggler.style.transform = "rotate(180deg)"
+      sidebar.style.display = "none";
+      mainContent.classList.toggle("main-content", "main-content--expanded")
+      } else if(sidebar.style.display = "none"){
+        toggler.style.transform = "rotate(0deg)"
+      sidebar.style.display = "";
+      }
+    })
+  </script>
 </body>
 </html>
