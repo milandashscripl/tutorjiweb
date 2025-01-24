@@ -58,21 +58,10 @@
 
 
 
-
-document.getElementById('updateProfileForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
-
+document.addEventListener('DOMContentLoaded', async () => {
   const userId = localStorage.getItem('userId');
   const formData = new FormData();
   const token = localStorage.getItem('token');
-
-  // Append form fields to FormData
-  formData.append('name', document.getElementById('name').value);
-  formData.append('contact', document.getElementById('contact').value);
-  formData.append('aadhar', document.getElementById('aadhar').value);
-  formData.append('address', document.getElementById('address').value);
-  formData.append('profilePicture', document.getElementById('profilePicture').files[0]);
-
   // populate existing data
   const users = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`, {
     headers: { Authorization: `Bearer ${token}` },
@@ -89,6 +78,18 @@ document.getElementById('updateProfileForm').addEventListener('submit', async (e
   } else {
     alert('Failed to fetch profile data!');
   }
+  
+document.getElementById('updateProfileForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+
+  // Append form fields to FormData
+  formData.append('name', document.getElementById('name').value);
+  formData.append('contact', document.getElementById('contact').value);
+  formData.append('aadhar', document.getElementById('aadhar').value);
+  formData.append('address', document.getElementById('address').value);
+  formData.append('profilePicture', document.getElementById('profilePicture').files[0]);
+
 
 
   try {
@@ -110,4 +111,5 @@ document.getElementById('updateProfileForm').addEventListener('submit', async (e
     console.error('Error updating profile:', err);
     alert('An unexpected error occurred. Please try again later.');
   }
+}); 
 });
