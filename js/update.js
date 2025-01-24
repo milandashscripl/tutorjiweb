@@ -71,7 +71,13 @@ document.getElementById('updateProfileForm').addEventListener('submit', async (e
   formData.append('aadhar', document.getElementById('aadhar').value);
   formData.append('address', document.getElementById('address').value);
 
-  // Append password if updated
+  // populate existing data
+  try{
+    const user = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`);
+    document.getElementById('name').value = user.name || '';
+  }catch (err) {
+    alert("can't fetch data");
+  }
 
   // Append profile picture if uploaded
   const profilePicture = document.getElementById('profilePicture').files[0];
