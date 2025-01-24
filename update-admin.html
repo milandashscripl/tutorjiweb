@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Admin</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="mainBox">
+    <div class="container">
+      <h1 style="text-align: center;">Update Admin Profile</h1>
+      <form id="updateForm">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="contact" placeholder="Contact" required />
+        <input type="text" name="aadhar" placeholder="Aadhaar" required />
+        <input type="text" name="address" placeholder="Address" required />
+        <input type="file" name="profilePicture" accept="image/*" />
+        <button type="submit">Update</button>
+      </form>
+      
+      
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('updateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const userId = localStorage.getItem('userId'); // Fetch user ID from storage
+  
+      const response = await fetch(`/api/users/update/${userId}`, {
+        method: 'PUT',
+        body: formData,
+      });
+  
+      if (response.ok) {
+        alert('Profile updated successfully!');
+        window.location.href = '/profile.html';
+      } else {
+        const error = await response.json();
+        alert(error.message || 'Failed to update profile.');
+      }
+    });
+  </script>
+ 
+</body>
+</html>

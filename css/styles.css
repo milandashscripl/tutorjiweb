@@ -95,6 +95,15 @@ button:hover {
   font-weight: bold;
 }
 
+.updateBtn{
+  text-decoration: none;
+  background: black;
+  padding: 5px 10px;
+  color: whitesmoke;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
 
 @media screen and (max-width: 760px) {
   .mainBox{
