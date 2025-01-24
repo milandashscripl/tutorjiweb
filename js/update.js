@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Optionally display the current profile picture
       if (user.profilePicture) {
-        document.getElementById('profilePicture').innerHTML = `<img src="${user.profilePicture}"`
+        document.getElementById('profilePictureBox').innerHTML = `<img src="${user.profilePicture}" alt= "profile pic" />` 
       }
     } else {
       alert('Failed to load user data.');
