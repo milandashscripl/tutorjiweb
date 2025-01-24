@@ -62,7 +62,7 @@
 document.getElementById('updateProfileForm').addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const userId = document.getElementById('userId').value; // Hidden input with user ID
+  const userId = localStorage.getItem('userId');
   const formData = new FormData();
 
   // Append form fields to FormData
