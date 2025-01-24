@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
   if (users.ok) {
-    const user = await response.json();
+    const user = await users.json();
     document.getElementById('profilePictureImg').src = user.profilePicture;
     document.getElementById('name').value = user.name;
     document.getElementById('contact').value = user.contact;
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } else {
     alert('Failed to fetch profile data!');
   }
-  
+
 document.getElementById('updateProfileForm').addEventListener('submit', async (event) => {
   event.preventDefault();
 
