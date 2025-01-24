@@ -64,26 +64,32 @@ document.getElementById('updateProfileForm').addEventListener('submit', async (e
 
   const userId = localStorage.getItem('userId');
   const formData = new FormData();
+  const token = localStorage.getItem('token');
 
   // Append form fields to FormData
   formData.append('name', document.getElementById('name').value);
   formData.append('contact', document.getElementById('contact').value);
   formData.append('aadhar', document.getElementById('aadhar').value);
   formData.append('address', document.getElementById('address').value);
+  formData.append('profilePicture', document.getElementById('profilePicture').files[0]);
 
   // populate existing data
-  try{
-    const user = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`);
-    document.getElementById('name').value = user.name || '';
-  }catch (err) {
-    alert("can't fetch data");
+  const users = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+
+  if (users.ok) {
+    const user = await response.json();
+    document.getElementById('profilePictureImg').src = user.profilePicture;
+    document.getElementById('name').value = user.name;
+    document.getElementById('contact').value = user.contact;
+    document.getElementById('aadhar').value = user.aadhar;
+    document.getElementById('address').value = user.address;
+  } else {
+    alert('Failed to fetch profile data!');
   }
 
-  // Append profile picture if uploaded
-  const profilePicture = document.getElementById('profilePicture').files[0];
-  if (profilePicture) {
-    formData.append('profilePicture', profilePicture);
-  }
 
   try {
     const response = await fetch(`https://tutorji.onrender.com/api/users/update/${userId}`, {
