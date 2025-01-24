@@ -9,11 +9,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       const user = await response.json();
 
       // Populate form fields with existing user data
-      updateForm.name.value = user.name || '';
-      updateForm.email.value = user.email || '';
-      updateForm.contact.value = user.contact || '';
-      updateForm.aadhar.value = user.aadhar || '';
-      updateForm.address.value = user.address || '';
+      // updateForm.name.value = user.name || '';
+      document.getElementById("name").value = user.name || '';
+      // updateForm.email.value = user.email || '';
+      // updateForm.contact.value = user.contact || '';
+      document.getElementById("contact").value = user.contact|| '';
+      // updateForm.aadhar.value = user.aadhar || '';
+      document.getElementById('aadhar').value = user.aadhar || '',
+      // updateForm.address.value = user.address || '';
+      document.getElementById('address').value = user.address || ''
       // updateForm.role.value = user.role || 'user';
 
       // Optionally display the current profile picture
