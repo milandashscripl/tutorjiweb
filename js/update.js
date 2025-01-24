@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Pre-fill form fields with existing user data
   try {
-    const response = await fetch(`/api/users/profile/${userId}`);
+    const response = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`);
     if (response.ok) {
       const user = await response.json();
 
