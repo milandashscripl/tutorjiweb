@@ -16,10 +16,10 @@
         <input type="text" name="contact" placeholder="Contact" />
         <input type="text" name="aadhar" placeholder="Aadhaar" />
         <input type="text" name="address" placeholder="Address" />
-        <select name="role">
+        <!-- <select name="role">
           <option value="user">User</option>
           <option value="admin">Admin</option>
-        </select>
+        </select> -->
         <input type="file" name="profilePicture" accept="image/*" />
         <button type="submit">Update</button>
       </form>
@@ -45,7 +45,7 @@
           console.log('Updated User:', data.user);
 
           // Redirect or update the UI
-          window.location.href = '/profile.html';
+          window.location.href = '/admin-profile.html';
         } else {
           const error = await response.json();
           alert(error.message || 'Failed to update user.');
