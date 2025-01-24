@@ -67,16 +67,11 @@ document.getElementById('updateProfileForm').addEventListener('submit', async (e
 
   // Append form fields to FormData
   formData.append('name', document.getElementById('name').value);
-  formData.append('email', document.getElementById('email').value);
   formData.append('contact', document.getElementById('contact').value);
   formData.append('aadhar', document.getElementById('aadhar').value);
   formData.append('address', document.getElementById('address').value);
 
   // Append password if updated
-  const password = document.getElementById('password').value;
-  if (password) {
-    formData.append('password', password);
-  }
 
   // Append profile picture if uploaded
   const profilePicture = document.getElementById('profilePicture').files[0];
