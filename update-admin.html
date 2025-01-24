@@ -11,16 +11,13 @@
     <div class="container">
       <h1 style="text-align: center;">Update User Profile</h1>
       <form id="updateForm">
-        <input type="text" name="name" placeholder="Name" />
-        <input type="email" name="email" placeholder="Email" />
-        <input type="text" name="contact" placeholder="Contact" />
-        <input type="text" name="aadhar" placeholder="Aadhaar" />
-        <input type="text" name="address" placeholder="Address" />
-        <!-- <select name="role">
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select> -->
-        <input type="file" name="profilePicture" accept="image/*" />
+        <input type="text" id="name" placeholder="Name" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="text" id="contact" placeholder="Contact" />
+        <input type="text" id="aadhar" placeholder="Aadhaar" />
+        <textarea id="address" placeholder="Address"></textarea>
+        <input type="password" id="password" placeholder="Password" />
+        <input type="file" id="profilePicture" accept="image/*" />
         <button type="submit">Update</button>
       </form>
     </div>
