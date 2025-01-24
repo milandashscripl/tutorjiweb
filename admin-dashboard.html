@@ -26,7 +26,12 @@
       padding: 20px 0;
       position: fixed;
       height: 100%;
+      overflow-x: hidden;
+      overflow-y:auto ;
     }
+    .sidebar::-webkit-scrollbar {
+  display: none;
+}
     
     .sidebar h2 {
       text-align: center;
@@ -84,7 +89,7 @@
     .toggler{
      position: absolute; 
      cursor: pointer;
-     background-color: red;
+     background-color: orangered;
      padding: 0 10px;
      border-radius: 0 10px;
      display: none;
@@ -100,7 +105,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      /* width: 100%; */
     }
 
     .navbar .search-bar input {
@@ -137,7 +141,6 @@
     }
       .navbar{
         flex-direction: column;
-        align-items: start;
       }
       .toggler{
         left: 20px;
@@ -147,6 +150,7 @@
       }
       .search-bar{
         width: 100%;
+        margin: 20px 0;
       }
     }
     /* Main Content Area */
