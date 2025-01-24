@@ -215,6 +215,27 @@
       }
     })
   </script>
-  <script src="js/profile.js"></script>
+  <script>
+    const adminNameElement = document.getElementById('adminName');
+const adminLogoElement = document.getElementById('adminLogo');
+
+async function fetchAdminData() {
+  try {
+    const response = await fetch('http://localhost:5000/api/admin'); // Replace with your API endpoint
+    if (!response.ok) {
+      throw new Error('Failed to fetch admin data');
+    }
+    const admin = await response.json();
+    adminNameElement.textContent = admin.name;
+    adminLogoElement.src = admin.profilePicture; // Ensure this is a valid URL or file path
+  } catch (error) {
+    console.error('Error fetching admin data:', error);
+  }
+}
+
+// Fetch admin data when the page loads
+document.addEventListener('DOMContentLoaded', fetchAdminData);
+
+  </script>
 </body>
 </html>
