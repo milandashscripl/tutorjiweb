@@ -7,27 +7,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`);
     if (response.ok) {
       const user = await response.json();
+      document.getElementById('name').value = user.name || '';
+      document.getElementById('contact').value = user.contact || '';
+      document.getElementById('aadhar').value = user.aadhar || '';
+      document.getElementById('address').value = user.address || '';
 
-      // Populate form fields with existing user data
-      // updateForm.name.value = user.name || '';
-      document.getElementById("name").value = user.name || '';
-      // updateForm.email.value = user.email || '';
-      // updateForm.contact.value = user.contact || '';
-      document.getElementById("contact").value = user.contact|| '';
-      // updateForm.aadhar.value = user.aadhar || '';
-      document.getElementById('aadhar').value = user.aadhar || '',
-      // updateForm.address.value = user.address || '';
-      document.getElementById('address').value = user.address || ''
-      // updateForm.role.value = user.role || 'user';
+
 
       // Optionally display the current profile picture
       if (user.profilePicture) {
-        const profileImg = document.createElement('img');
-        profileImg.src = user.profilePicture; // Assuming URL is already public-facing or served.
-        profileImg.alt = 'Profile Picture';
-        profileImg.style.width = '100px';
-        profileImg.style.height = '100px';
-        updateForm.insertBefore(profileImg, updateForm.firstChild);
+        document.getElementById('profilePicture').innerHTML = `<img src="${user.profilePicture}"`
       }
     } else {
       alert('Failed to load user data.');
