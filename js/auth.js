@@ -64,7 +64,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
       if (role === "admin") {
         window.location.href = "admin-dashboard.html"; // Admin dashboard page
       } else if (role === "user") {
-        window.location.href = "profile.html"; // User profile page
+        window.location.href = "index.html"; // User profile page
       }
     } else {
       const errorData = await response.json();
