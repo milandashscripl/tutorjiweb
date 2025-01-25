@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-    
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+        <h2></h2>
+        <ul>
+        <img id="profilePicture" class="profilePicture" src="profilePic.png" alt="Your Picture">
+          <li><a href="index.html"><i>🏠</i> Dashboard</a></li>
+          <li><a href="proflile.html"><i>👨</i> Admin Profile</a></li>
+          <li><a href="update-profile.html"><i>✏ </i> Edit Profile</a></li>
+          <li><a href="login.html"><i>🙇</i> Login </a></li>
+        </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="navbar" id="navbar">
+        <div class="toggler" id="toggler" > 
+            &#9776;
+            </div>
+                <div class="admin-info">
+                  <img id="profilePicture" src="profilePic.png" alt="Profile Picture">
+                  <span id="name">Your Name</span>
+                </div>
+                <div class="search-bar">
+                  <input type="text" placeholder="Search...">
+                  <button>Search</button>
+                </div>
+    </div>
+    <!-- Content Area -->
+    <div class="content">
+      <h1>Welcome to the Website</h1>
+      <p>Select an option from the sidebar to manage the system.</p>
+    </div>
+  </div>
+  <script src="js/profile.js"></script>
+
+  <script>
+      const sidebar = document.querySelector('.sidebar')
+  const mainContent = document.querySelector('.main-content');
+  toggler.addEventListener('click', function(){
+    if(sidebar.style.display == ""){
+    // toggler.style.transform = "rotate(180deg)"
+    sidebar.style.display = "none";
+    } else if(sidebar.style.display = "none"){
+      // toggler.style.transform = "rotate(0deg)"
+    sidebar.style.display = "";
+    }
+  });
+  </script>
 </body>
 </html>

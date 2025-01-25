@@ -1,6 +1,5 @@
 document.getElementById('sidebar').innerHTML = 
 `  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
     <h2></h2>
     <ul>
       <li><a href="admin-dashboard.html"><i>🏠</i> Dashboard</a></li>
@@ -11,8 +10,7 @@ document.getElementById('sidebar').innerHTML =
       <li><a href="analitics.html"><i>📊</i> Analitics</a></li>
       <li><a href="delete-student.html"><i>❌</i> Delete Students</a></li>
       <li><a href="delete-teacher.html"><i>❌</i> Delete Teachers</a></li>
-    </ul>
-  </div>`
+    </ul>`
   let isHamburger = true;
   console.log(`this is the status of ${isHamburger}`)
 
