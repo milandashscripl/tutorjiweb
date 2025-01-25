@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-  <div class="mainBox">
+
+ 
+  <div id="sidebar" class="sidebar"></div>
+  <div class="main-content">
+    <!-- Navbar -->
+    <div class="navbar" id="navbar"></div>
     <div class="container">
       <h1 style="text-align: center;">Admin Profile</h1>
       <div id="profile">
@@ -37,5 +43,6 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
   window.location.href = 'index.html'; // Redirect to login page
 });
   </script>
+  <script src="js/sidebar.js"></script>
 </body>
 </html>

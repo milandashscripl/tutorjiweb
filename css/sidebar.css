@@ -1,0 +1,146 @@
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #555;
+    color: whitesmoke;
+    padding: 20px 0;
+    position: fixed;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y:auto ;
+  }
+  .sidebar::-webkit-scrollbar {
+display: none;
+}
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+    display: block;
+    padding: 10px 20px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: #555;
+  }
+  
+  /* Main Content and Navbar Styling */
+  .main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+
+  .navbar {
+    background-color: #555;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  
+  .navbar .admin-info {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+  }
+  .toggler{
+   position: absolute; 
+   cursor: pointer;
+   background-color: orangered;
+   padding: 0 10px;
+   border-radius: 0 10px;
+   display: none;
+  }
+  .navbar .admin-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .navbar .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar .search-bar input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .navbar .search-bar button {
+    padding: 10px 15px;
+    background-color:orangered ;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: auto 0;
+  }
+
+  .navbar .search-bar button:hover {
+    background-color: #333;
+  }
+
+  @media screen and (max-width: 760px){
+    .main-content{
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+    .navbar{
+      flex-direction: column;
+    }
+    .toggler{
+      left: 20px;
+      top: 10px;
+      font-size: 20px;
+      display: block;
+    }
+    .search-bar{
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+  /* Main Content Area */
+  .content {
+    padding: 20px; 
+    background-color: #ecf0f1;
+    flex-grow: 1;
+  }
+
+  .content h1 {
+    font-size: 24px;
+    color: #2c3e50;
+  }
