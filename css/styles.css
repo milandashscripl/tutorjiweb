@@ -78,8 +78,8 @@ button:hover {
 }
 
 .profilePicture {
-  height: 50%;
-  width: 50%;
+  height: 100px;
+  width: 100px;
   border-radius: 20px 5px;
   object-fit: cover;
   margin-right: 20px; /* Add spacing between the picture and the info */
