@@ -39,5 +39,8 @@ const sidebar = document.querySelector(".sidebar");
     } else {
       alert("please register or login yourself!");
       document.getElementById("login").textContent = "Login"
+      document.getElementById('login').addEventListener('click', () => {
+        window.location.href = 'login.html'; // Redirect to login page
+    })
     }
   });
