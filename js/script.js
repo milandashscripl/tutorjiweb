@@ -31,11 +31,18 @@ const sidebar = document.querySelector(".sidebar");
       document.getElementById("contact").textContent = user.contact;
       document.getElementById("aadhar").textContent = user.aadhar;
       document.getElementById("address").textContent = user.address;
+      if(user){
       document.getElementById("login").textContent = "Logout"
         document.getElementById('login').addEventListener('click', () => {
           localStorage.clear();
           window.location.href = 'index.html'; // Redirect to login page
       })
+    } else{
+      document.getElementById("login").textContent = "Login"
+      document.getElementById('login').addEventListener('click', () => {
+        window.location.href = 'login.html'; // Redirect to login page
+    })
+    }
     } else {
       alert("please register or login yourself!");
       document.getElementById("login").textContent = "Login"
