@@ -31,14 +31,13 @@ const sidebar = document.querySelector(".sidebar");
       document.getElementById("contact").textContent = user.contact;
       document.getElementById("aadhar").textContent = user.aadhar;
       document.getElementById("address").textContent = user.address;
-      document.getElementById("login").textContent = "Logout"
-      document.getElementById("login").addEventListener('click', function(){
-        document.getElementById('logoutBtn').addEventListener('click', () => {
+      document.getElementById("login").innerHTML = `<i>🙇</i> Logout`
+        document.getElementById('login').addEventListener('click', () => {
           localStorage.clear();
           window.location.href = 'index.html'; // Redirect to login page
-        });
       })
     } else {
       alert("please register or login yourself!");
+      document.getElementById("login").innerHTML = `<i>🙇</i> Login`
     }
   });
