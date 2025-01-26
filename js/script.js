@@ -27,10 +27,6 @@ const sidebar = document.querySelector(".sidebar");
       const user = await response.json();
       document.getElementById("profilePicture").src = user.profilePicture;
       document.getElementById("name").textContent = user.name;
-      document.getElementById("email").textContent = user.email;
-      document.getElementById("contact").textContent = user.contact;
-      document.getElementById("aadhar").textContent = user.aadhar;
-      document.getElementById("address").textContent = user.address;
       if(user){
       document.getElementById("login").textContent = "Logout"
         document.getElementById('login').addEventListener('click', () => {
