@@ -1,0 +1,74 @@
+.card{
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px whitesmoke;
+    background:white;
+}
+.padding--10-20{
+    padding: 10px 20px;
+}
+.padding--0{
+    padding:0;
+}
+.subscriptions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: white;
+}
+
+.subscriptions__card{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
+.subscriptions__card:hover{
+   transform: scale(1.01)
+}
+.card__header{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+.card__header__banner{
+    height: 100%;
+    width: 100%;
+}
+.card__body{
+    padding: 15px;
+    background: goldenrod;
+}
+.card__plan{
+    color: yellow;
+    font-size: 2em;
+    text-align: center;
+}
+#planDetailsList{
+    font-size: xx-small;
+}
+.card__footer{
+    background: #333;
+    height: 30px;
+    text-align: center;
+}
+.card__footer__btn{
+    background: goldenrod;
+    padding: 5px 10px;
+    font-size: x-small;
+}
+#login{
+    background: orangered;
+    color: white;
+    padding: 10px 20px;
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 10px 0;
+}
+@media screen and (max-width:760px) {
+    .subscriptions__card{
+        width: 100%;
+    }
+}

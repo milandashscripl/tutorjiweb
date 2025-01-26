@@ -6,42 +6,9 @@
     <title>index</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/styles2.css" />
   </head>
   <body>
-
-    <style>
-        .card{
-            padding: 10px 20px;
-            border-radius: 10px 0;
-            box-shadow: 5px 5px 10px whitesmoke;
-        }
-        .subscriptions{
-            display: flex;
-            flex-wrap: wrap;
-            flex-basis: calc((100% - 250px)/4);
-            gap: 10px;
-        }
-        .subscription--card{
-            background: orangered;
-            width: calc((100% - 250px)/4);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .planDp{
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-        #login{
-            background: orangered;
-            color: white;
-            padding: 10px 20px;
-            width: max-content;
-            margin: 0 auto;
-            border-radius: 10px 0;
-        }
-    </style>
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <h2></h2>
@@ -78,17 +45,114 @@
       <!-- Content Area -->
       <div class="content">
         <h1>Your Subscriptions</h1>
-        <div class="card subscriptions" id="subscriptions">
-            <div class="card subscription--card">
-                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA" alt="" class="planDp">
+        <div class="card subscriptions padding--10-20" id="subscriptions">
+          <div class="card padding--0 subscriptions__card">
+            <div class="card__header">
+              <img
+                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA"
+                alt=""
+                class="card__header__banner"
+              />
             </div>
-            
+            <div class="card__body">
+              <h3 style="text-align: center">Plan Details</h3>
+              <div class="card__plan">&#8377; 200/m</div>
+              <ul id="planDetailsList">
+                <li>Free Tests</li>
+                <li>Free Tests & E-Books</li>
+                <li>Free Tests, E-Books & Probable Questions Set</li>
+              </ul>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn">Purchase</button>
+            </div>
+          </div>
+
+          <div class="card padding--0 subscriptions__card">
+            <div class="card__header">
+              <img
+                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA"
+                alt=""
+                class="card__header__banner"
+              />
+            </div>
+            <div class="card__body">
+              <h3 style="text-align: center">Plan Details</h3>
+              <div class="card__plan">&#8377; 200/m</div>
+              <ul id="planDetailsList">
+                <li>Free Tests</li>
+                <li>Free Tests & E-Books</li>
+                <li>Free Tests, E-Books & Probable Questions Set</li>
+              </ul>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn">Purchase</button>
+            </div>
+          </div><div class="card padding--0 subscriptions__card">
+            <div class="card__header">
+              <img
+                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA"
+                alt=""
+                class="card__header__banner"
+              />
+            </div>
+            <div class="card__body">
+              <h3 style="text-align: center">Plan Details</h3>
+              <div class="card__plan">&#8377; 200/m</div>
+              <ul id="planDetailsList">
+                <li>Free Tests</li>
+                <li>Free Tests & E-Books</li>
+                <li>Free Tests, E-Books & Probable Questions Set</li>
+              </ul>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn">Purchase</button>
+            </div>
+          </div><div class="card padding--0 subscriptions__card">
+            <div class="card__header">
+              <img
+                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA"
+                alt=""
+                class="card__header__banner"
+              />
+            </div>
+            <div class="card__body">
+              <h3 style="text-align: center">Plan Details</h3>
+              <div class="card__plan">&#8377; 200/m</div>
+              <ul id="planDetailsList">
+                <li>Free Tests</li>
+                <li>Free Tests & E-Books</li>
+                <li>Free Tests, E-Books & Probable Questions Set</li>
+              </ul>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn">Purchase</button>
+            </div>
+          </div><div class="card padding--0 subscriptions__card">
+            <div class="card__header">
+              <img
+                src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA"
+                alt=""
+                class="card__header__banner"
+              />
+            </div>
+            <div class="card__body">
+              <h3 style="text-align: center">Plan Details</h3>
+              <div class="card__plan">&#8377; 200/m</div>
+              <ul id="planDetailsList">
+                <li>Free Tests</li>
+                <li>Free Tests & E-Books</li>
+                <li>Free Tests, E-Books & Probable Questions Set</li>
+              </ul>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn">Purchase</button>
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
 
-<script src="js/script.js"></script>
-
+    <script src="js/script.js"></script>
   </body>
 </html>
