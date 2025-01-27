@@ -1,38 +1,37 @@
 .slider{
     height: 60vh;
     overflow: hidden;
-    background: red;
-    box-sizing: content-box;
-    margin-bottom: 50px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
-.silder__img{
-    height: 100%;
+img.slider__img{
     width: 100%;
+    object-fit: scale-down;
 }
 .card{
     border-radius: 7px;
     box-shadow: 5px 5px 10px whitesmoke;
     background:white;
+    margin: 10px;
 }
-.padding--10-20{
-    padding: 10px 20px;
+.padding--5{
+    padding: 5;
 }
 .padding--0{
     padding:0;
 }
-.subscriptions{
+.subscriptions, .plans{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     background: white;
+    justify-content: center;
 }
 
-.subscriptions__card{
-    width: 30%;
+.subscriptions__card,.plans__card{
+    flex-basis: calc((100%-250px)/3);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding: 0;
     box-shadow: none;
     cursor: pointer;
 }
@@ -48,9 +47,14 @@
     height: 100%;
     width: 100%;
 }
-.card__body{
+.subscriptions__card__body{
     padding: 15px;
     background: goldenrod;
+}
+.plans__card__body{
+    padding: 15px;
+    background: orangered;
+    color: whitesmoke;
 }
 .card__plan{
     color: yellow;
@@ -66,9 +70,14 @@
     text-align: center;
 }
 .card__footer__btn{
-    background: goldenrod;
     padding: 5px 10px;
     font-size: x-small;
+}
+.btn--goldenrod{
+    background: goldenrod;
+}
+.btn--orangered{
+    background: orangered;
 }
 #login{
     background: orangered;
@@ -79,6 +88,9 @@
     border-radius: 10px 0;
 }
 @media screen and (max-width:760px) {
+    .slider{
+        height: max-content;
+    }
     .subscriptions{
         flex-wrap: nowrap;
         overflow-x: scroll;
