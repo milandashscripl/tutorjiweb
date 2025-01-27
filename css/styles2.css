@@ -71,4 +71,7 @@
     .subscriptions__card{
         width: 100%;
     }
+    .card__header{
+        height: 200px;
+    }
 }
