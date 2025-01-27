@@ -110,7 +110,17 @@ display: none;
   .navbar .search-bar button:hover {
     background-color: #333;
   }
+  /* Main Content Area */
+  .content {
+    padding: 20px; 
+    background-color: #ecf0f1;
+    flex-grow: 1;
+  }
 
+  .content h1 {
+    font-size: 24px;
+    color: #2c3e50;
+  }
   @media screen and (max-width: 760px){
     .sidebar{
       display: none;
@@ -131,19 +141,12 @@ display: none;
       font-size: 20px;
       display: block;
     }
+    .content{
+      padding: 0;
+    }
     .search-bar{
       width: 100%;
       margin: 20px 0;
     }
   }
-  /* Main Content Area */
-  .content {
-    padding: 20px; 
-    background-color: #ecf0f1;
-    flex-grow: 1;
-  }
-
-  .content h1 {
-    font-size: 24px;
-    color: #2c3e50;
-  }
+  
