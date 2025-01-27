@@ -91,13 +91,14 @@ img.slider__img{
     .slider{
         height: max-content;
     }
-    .subscriptions{
+    .subscriptions,.plans{
         flex-wrap: nowrap;
         overflow-x: scroll;
+        justify-content: start;
     }
-    .subscriptions__card{
-        width: 100%;
-        flex-basis: 100%;
+    .subscriptions__card, .plans__card{
+        flex-basis: 80%;
+        flex-grow: -100;
         flex-shrink: 0;
     }
     .card__header{
