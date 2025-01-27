@@ -1,14 +1,15 @@
-const sidebar = document.querySelector(".sidebar");
-  const mainContent = document.querySelector(".main-content");
-  toggler.addEventListener("click", function () {
-    if (sidebar.style.display == "") {
-      // toggler.style.transform = "rotate(180deg)"
-      sidebar.style.display = "none";
-    } else if ((sidebar.style.display = "none")) {
-      // toggler.style.transform = "rotate(0deg)"
-      sidebar.style.display = "";
-    }
-  });
+// Toggle Sidebar Visibility
+const toggler = document.getElementById('toggler');
+const sidebar = document.getElementById('sidebar');
+
+toggler.addEventListener('click', function () {
+  if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+    sidebar.style.display = 'block';
+  } else {
+    sidebar.style.display = 'none';
+  }
+});
+
 
 
 
