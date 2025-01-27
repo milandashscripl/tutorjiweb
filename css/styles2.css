@@ -68,8 +68,14 @@
     border-radius: 10px 0;
 }
 @media screen and (max-width:760px) {
+    .subscriptions{
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
     .subscriptions__card{
         width: 100%;
+        flex-basis: 100%%;
+        flex-shrink: 0;
     }
     .card__header{
         height: 200px;
