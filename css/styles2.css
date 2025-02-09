@@ -115,11 +115,11 @@ img.slider__img{
         justify-content: start;
     }
     .subscriptions__card, .plans__card{
-        flex-basis: 80%;
-        flex-grow: -100;
+        flex-basis: 60%;
+        flex-grow: -10;
         flex-shrink: 0;
     }
     .card__header{
-        height: 200px;
+        height: 100px;
     }
 }
