@@ -59,7 +59,7 @@ toggler.addEventListener('click', function () {
         // listElement.innerHTML = '';
 
         users.forEach(user => {
-          listElement.innerHTML = ` <div class="card studentsCard">
+          const myCard = ` <div class="card studentsCard">
             <div class="studentsCard__pic">
               <img src="${user.profilePicture}" alt="">
             </div>
@@ -72,7 +72,7 @@ toggler.addEventListener('click', function () {
           </div>`
             // const listItem = document.createElement('li');
             // listItem.textContent = `${user.name} - ${user.email}`;
-            // listElement.appendChild(listItem);
+            listElement.appendChild(myCard);
         });
     } catch (error) {
         console.error(`Error fetching ${role}:`, error);
