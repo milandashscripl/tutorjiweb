@@ -56,12 +56,23 @@ toggler.addEventListener('click', function () {
         const users = await response.json();
 
         const listElement = document.getElementById(elementId);
-        listElement.innerHTML = '';
+        // listElement.innerHTML = '';
 
         users.forEach(user => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${user.name} - ${user.email}`;
-            listElement.appendChild(listItem);
+          listElement.innerHTML = ` <div class="card studentsCard">
+            <div class="studentsCard__pic">
+              <img src="${user.profilePicture}" alt="">
+            </div>
+            <ul>
+              <li>Name: ${user.name}</li>
+              <li>Email: ${user.email}</li>
+              <li>Contact: ${user.contact}</li>
+              <li>Address: ${user.address}</li>
+            </ul>
+          </div>`
+            // const listItem = document.createElement('li');
+            // listItem.textContent = `${user.name} - ${user.email}`;
+            // listElement.appendChild(listItem);
         });
     } catch (error) {
         console.error(`Error fetching ${role}:`, error);
