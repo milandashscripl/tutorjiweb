@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 .slider{
     height: 60vh;
     overflow: hidden;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
+h1.myHeadings {
+    color: orangered;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;  /* Super bold */
+    text-transform: uppercase;  /* Makes it all caps for a stronger impact */
+    letter-spacing: 2px;  /* Adds spacing for a stylish look */
+    padding: 10px 30px;
+}
+
 img.slider__img{
     width: 100%;
     object-fit: scale-down;
@@ -23,7 +33,7 @@ img.slider__img{
 .subscriptions, .plans{
     display: flex;
     flex-wrap: wrap;
-    background: white;
+    background: transparent;
     justify-content: center;
 }
 
