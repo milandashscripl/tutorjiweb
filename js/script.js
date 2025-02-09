@@ -56,7 +56,7 @@ toggler.addEventListener('click', function () {
         const users = await response.json();
 
         const listElement = document.getElementById(elementId);
-        // listElement.innerHTML = '';
+        listElement.innerHTML = '';
 
         users.forEach(user => {
           const myCard = ` <div class="card studentsCard">
@@ -67,7 +67,7 @@ toggler.addEventListener('click', function () {
               <li>Name: ${user.name}</li>
               <li>Email: ${user.email}</li>
               <li>Contact: ${user.contact}</li>
-              <li>Address: ${user.address}</li>
+              <li>Address: ${user}</li>
             </ul>
           </div>`
             // const listItem = document.createElement('li');
