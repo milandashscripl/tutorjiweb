@@ -30,7 +30,7 @@ img.slider__img{
 .padding--0{
     padding:0;
 }
-.subscriptions, .plans{
+.subscriptions, .plans, .about{
     display: flex;
     flex-wrap: wrap;
     background: transparent;
@@ -96,6 +96,11 @@ img.slider__img{
     width: max-content;
     margin: 0 auto;
     border-radius: 10px 0;
+}
+.aboutUsText{
+    padding: 10px 30px;
+    font-family: fantasy;
+    color: green;
 }
 @media screen and (max-width:760px) {
     .slider{
