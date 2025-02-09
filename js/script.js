@@ -16,32 +16,21 @@ toggler.addEventListener('click', function () {
     document.addEventListener("DOMContentLoaded", async () => {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
+
     const response = await fetch(
       `https://tutorji.onrender.com/api/users/profile/${userId}`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
- 
-    const adminData = await fetch(
-      `https://tutorji.onrender.com/api/users/profile/679393dc1543179d14bb55df`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
-
 
     if (response.ok) {
       const user = await response.json();
-      const admin = await adminData.jsons();
       document.getElementById("profilePicture").src = user.profilePicture;
       document.getElementById("name").textContent = user.name;
-      const headings = document.getElementById("aboutHeadings");
-      headings.textContent = `About ${admin.name}`
       if(user){
       document.getElementById("login").textContent = "Logout"
         document.getElementById('login').addEventListener('click', () => {
-
           localStorage.clear();
           window.location.href = 'index.html'; // Redirect to login page
       })
