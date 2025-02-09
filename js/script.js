@@ -25,9 +25,12 @@ toggler.addEventListener('click', function () {
  
     const adminData = await fetch(
       `https://tutorji.onrender.com/api/users/profile/679393dc1543179d14bb55df`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
     );
 
-    
+
     if (response.ok) {
       const user = await response.json();
       const admin = await adminData.jsons();
