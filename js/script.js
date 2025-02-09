@@ -23,7 +23,6 @@ toggler.addEventListener('click', function () {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-
     if (response.ok) {
       const user = await response.json();
       document.getElementById("profilePicture").src = user.profilePicture;
@@ -48,3 +47,29 @@ toggler.addEventListener('click', function () {
     })
     }
   });
+
+
+
+  async function fetchUsers(role, elementId) {
+    try {
+        const response = await fetch(`https://tutorji.onrender.com/api/users/${role}`);
+        const users = await response.json();
+
+        const listElement = document.getElementById(elementId);
+        listElement.innerHTML = '';
+
+        users.forEach(user => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${user.name} - ${user.email}`;
+            listElement.appendChild(listItem);
+        });
+    } catch (error) {
+        console.error(`Error fetching ${role}:`, error);
+    }
+}
+
+// Fetch and display students
+fetchUsers('students', 'studentsList');
+
+// Fetch and display teachers
+fetchUsers('teachers', 'teachersList');
