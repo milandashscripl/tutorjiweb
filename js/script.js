@@ -23,14 +23,14 @@ toggler.addEventListener('click', function () {
       }
     );
  
-    const admin = await fetch(
+    const adminData = await fetch(
       `https://tutorji.onrender.com/api/users/profile/679393dc1543179d14bb55df`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
     );
+
+    
     if (response.ok) {
       const user = await response.json();
+      const admin = await adminData.jsons();
       document.getElementById("profilePicture").src = user.profilePicture;
       document.getElementById("name").textContent = user.name;
       const headings = document.getElementById("aboutHeadings");
