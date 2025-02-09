@@ -101,6 +101,9 @@ img.slider__img{
     .slider{
         height: max-content;
     }
+    h1.myHeadings{
+        text-align: center;
+    }
     .subscriptions,.plans{
         flex-wrap: nowrap;
         overflow-x: scroll;
