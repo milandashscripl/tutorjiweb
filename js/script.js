@@ -56,23 +56,24 @@ toggler.addEventListener('click', function () {
         const users = await response.json();
 
         const listElement = document.getElementById(elementId);
-        listElement.innerHTML = '';
+        listElement.innerHTML = ''; // Clear previous content
 
         users.forEach(user => {
-          const myCard = ` <div class="card studentsCard">
-            <div class="studentsCard__pic">
-              <img src="${user.profilePicture}" alt="">
-            </div>
-            <ul>
-              <li>Name: ${user.name}</li>
-              <li>Email: ${user.email}</li>
-              <li>Contact: ${user.contact}</li>
-              <li>Address: ${user}</li>
-            </ul>
-          </div>`
-            // const listItem = document.createElement('li');
-            // listItem.textContent = `${user.name} - ${user.email}`;
-            listElement.appendChild(myCard);
+            const myCard = `
+            <div class="card studentsCard">
+                <div class="studentsCard__pic">
+                    <img src="${user.profilePicture}" alt="Profile Picture">
+                </div>
+                <ul>
+                    <li><strong>Name:</strong> ${user.name}</li>
+                    <li><strong>Email:</strong> ${user.email}</li>
+                    <li><strong>Contact:</strong> ${user.contact}</li>
+                    <li><strong>Address:</strong> ${user.address}</li>
+                </ul>
+            </div>`;
+
+            // Append card properly
+            listElement.innerHTML += myCard;
         });
     } catch (error) {
         console.error(`Error fetching ${role}:`, error);
@@ -84,3 +85,4 @@ fetchUsers('students', 'studentsList');
 
 // Fetch and display teachers
 fetchUsers('teachers', 'teachersList');
+
