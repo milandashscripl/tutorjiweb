@@ -66,8 +66,6 @@ toggler.addEventListener('click', function () {
                 </div>
                 <ul>
                     <li><strong>Name:</strong> ${user.name}</li>
-                    <li><strong>Email:</strong> ${user.email}</li>
-                    <li><strong>Contact:</strong> ${user.contact}</li>
                     <li><strong>Address:</strong> ${user.address}</li>
                 </ul>
             </div>`;

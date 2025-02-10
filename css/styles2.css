@@ -48,6 +48,11 @@ img.slider__img{
     box-shadow: none;
     cursor: pointer;
 }
+.card--flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .subscriptions__card:hover{
    transform: scale(1.01)
 }
@@ -114,6 +119,7 @@ img.slider__img{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     margin: 10px 0;
+    width: 43%;
 }
 .studentsCard__pic, .teachersCard__pic{
     width: 70px;
