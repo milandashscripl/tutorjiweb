@@ -151,4 +151,8 @@ img.slider__img{
     .card__header{
         height: 100px;
     }
+    .studentsCard, .teachersCard{
+        width: 70%;
+        margin: 0 auto;
+    }
 }
