@@ -6,6 +6,7 @@
   <title>Teachers</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/styles2.css">
 </head>
 <body>
   <!-- Sidebar -->
@@ -32,7 +33,42 @@
   </div>
   <script src="js/sidebar.js"></script>
   <script src="js/profile.js"></script>
-  <script src="js/script.js"></script>
 
+  <script>
+      async function fetchUsers(role, elementId) {
+    try {
+        const response = await fetch(`https://tutorji.onrender.com/api/users/${role}`);
+        const users = await response.json();
+
+        const listElement = document.getElementById(elementId);
+        listElement.innerHTML = ''; // Clear previous content
+
+        users.forEach(user => {
+            const myCard = `
+            <div class="card studentsCard">
+                <div class="studentsCard__pic">
+                    <img src="${user.profilePicture}" alt="Profile Picture">
+                </div>
+                <ul>
+                    <li><strong>Name:</strong> ${user.name}</li>
+                    <li><strong>Address:</strong> ${user.address}</li>
+                </ul>
+            </div>`;
+
+            // Append card properly
+            listElement.innerHTML += myCard;
+        });
+    } catch (error) {
+        console.error(`Error fetching ${role}:`, error);
+    }
+}
+
+// Fetch and display students
+fetchUsers('students', 'studentsList');
+
+// Fetch and display teachers
+fetchUsers('teachers', 'teachersList');
+
+  </script>
 </body>
 </html>
