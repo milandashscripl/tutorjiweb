@@ -109,8 +109,8 @@ img.slider__img{
 #login{
     background: orangered;
     color: white;
-    padding: 10px 50px;
-    width: max-content;
+    padding: 5px 0;
+    width: 90%;
     margin: 0 auto;
     border-radius: 10px;
 }
