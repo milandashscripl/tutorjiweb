@@ -99,7 +99,12 @@ img.slider__img{
 }
 .btn--dlt{
     background: red;
-    color: white;
+  }
+  .btn--update{
+    background: green;
+  }
+  .btn--freeze{
+    background: blue;
   }
 #login{
     background: orangered;
