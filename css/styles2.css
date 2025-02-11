@@ -66,11 +66,11 @@ img.slider__img{
     width: 100%;
 }
 .subscriptions__card__body{
-    padding: 15px;
+    padding: 5px 15px;
     background: goldenrod;
 }
 .plans__card__body{
-    padding: 15px;
+    padding: 5px 15px;
     background: orangered;
     color: whitesmoke;
 }
@@ -114,6 +114,7 @@ img.slider__img{
     margin: 0 auto;
     border-radius: 10px;
     text-align: center;
+    cursor: pointer;
 }
 .aboutUsText{
     padding: 10px 30px;
