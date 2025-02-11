@@ -97,6 +97,10 @@ img.slider__img{
 .btn--orangered{
     background: orangered;
 }
+.btn--dlt{
+    background: red;
+    color: white;
+  }
 #login{
     background: orangered;
     color: white;
@@ -120,6 +124,9 @@ img.slider__img{
     font-weight: bold;
     margin: 10px 0;
     width: 43%;
+}
+.studentsCard li, .teachersCard li{
+    list-style: none;
 }
 .studentsCard__pic, .teachersCard__pic{
     width: 70px;
