@@ -57,7 +57,7 @@ img.slider__img{
    transform: scale(1.01)
 }
 .card__header{
-    height: 100px;
+    height: 150px;
     width: 100%;
     overflow: hidden;
 }
@@ -168,9 +168,7 @@ img.slider__img{
         flex-grow: -10;
         flex-shrink: 0;
     }
-    .card__header{
-        height: 100px;
-    }
+
     .studentsCard, .teachersCard{
         width: 95%;
         margin: 5px auto;
