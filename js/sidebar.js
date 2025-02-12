@@ -8,6 +8,9 @@ document.getElementById('sidebar').innerHTML = `
     <li><a href="students.html"><i>🎓</i> Students</a></li>
     <li><a href="teachers.html"><i>👩‍🏫</i> Teachers</a></li>
     <li><a href="analitics.html"><i>📊</i> Analytics</a></li>
+    <li>
+          <div id="login"></div>
+        </li>
   </ul>`;
 
 // Navbar content

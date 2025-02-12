@@ -60,10 +60,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.btn--dlt{
-  background: red;
-  color: white;
-}
+
 
 button:hover {
   background-color: rgba(128, 128, 128, 0.7);
