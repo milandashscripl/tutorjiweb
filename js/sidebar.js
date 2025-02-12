@@ -9,10 +9,14 @@ document.getElementById('sidebar').innerHTML = `
     <li><a href="teachers.html"><i>👩‍🏫</i> Teachers</a></li>
     <li><a href="analitics.html"><i>📊</i> Analytics</a></li>
     <li>
-          <div id="login"></div>
-        </li>
+    <div id="login">Logout</div>
+    </li>
   </ul>`;
 
+  document.getElementById('login').addEventListener('click', () => {
+    localStorage.clear();
+    window.location.href = 'index.html'; // Redirect to login page
+})
 // Navbar content
 document.getElementById('navbar').innerHTML = `
   <div class="toggler" id="toggler">&#9776;</div>
@@ -36,3 +40,5 @@ toggler.addEventListener('click', function () {
     sidebar.style.display = 'none';
   }
 });
+
+
