@@ -106,7 +106,7 @@ img.slider__img{
   .btn--freeze{
     background: blue;
   }
-#login{
+.login{
     background: orangered;
     color: white;
     padding: 5px 0;

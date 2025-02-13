@@ -9,7 +9,7 @@ document.getElementById('sidebar').innerHTML = `
     <li><a href="teachers.html"><i>👩‍🏫</i> Teachers</a></li>
     <li><a href="analitics.html"><i>📊</i> Analytics</a></li>
     <li>
-    <div id="login">Logout</div>
+    <div id="login" style="background:orangered; color:white; width:90%; padding:5px 0; border-radius: 5px; margin: 0 auto; text-align:center">Logout</div>
     </li>
   </ul>`;
 
