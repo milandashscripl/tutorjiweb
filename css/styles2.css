@@ -53,6 +53,27 @@ img.slider__img{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.dashboard__card{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 30%;
+    color: white;
+    cursor: pointer;
+}
+.dashboard__card:hover{
+    scale: 1.03;
+}
+.card--orange{
+    background: orange;
+}
+.card--green{
+    background: green;
+}
+.card--blue{
+    background: blue;
+}
 .subscriptions__card:hover{
    transform: scale(1.01)
 }
@@ -172,5 +193,8 @@ img.slider__img{
     .studentsCard, .teachersCard{
         width: 95%;
         margin: 5px auto;
+    }
+    .dashboard__card{
+        flex-basis: 40%;
     }
 }
