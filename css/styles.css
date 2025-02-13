@@ -60,6 +60,9 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+#logoutBtn{
+  width: 100%;
+}
 
 
 button:hover {
@@ -68,14 +71,12 @@ button:hover {
 
 #profile {
   display: flex;
-  flex-direction: row; /* Arrange items side by side */
-  justify-content: space-between;
+  flex-direction: column; /* Arrange items side by side */
   align-items: center;
   padding: 20px;
   border-radius: 10px;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto; /* Center the profile container */
+  width: 100%; /* Center the profile container */
+  margin: 0;
 }
 
 .profilePicture {
@@ -103,9 +104,6 @@ button:hover {
   background: black;
   padding: 5px 10px;
   color: whitesmoke;
-  position: absolute;
-  right: 30px;
-  top: 30px;
 }
 
 @media screen and (max-width: 760px) {
