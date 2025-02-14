@@ -1,5 +1,6 @@
-html {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+html{
+    font-family: 'Montserrat', sans-serif;
 }
 
 * {
@@ -62,6 +63,13 @@ button {
 }
 #logoutBtn{
   width: 100%;
+}
+.addStudent{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
 }
 
 

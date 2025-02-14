@@ -21,12 +21,36 @@
     <div class="content">
       <!-- <h1>Welcome to the Admin Dashboard</h1> -->
       <div class="card card--flex card--transparent">
-        <div class="card dashboard__card card--orange">Manage Website</div>
-        <div class="card dashboard__card card--blue">Manage Theme</div>
-        <div class="card dashboard__card card--green">Manage Notes</div>
+        <div class="card dashboard__card card--orange" id="mWeb">Manage Website</div>
+        <div class="card dashboard__card card--blue" id="mTheme">Manage Theme</div>
+        <div class="card dashboard__card card--green" id="mNotes">Manage Notes</div>
       </div>
+      <div class="dashboard__content"></div>
     </div>
   </div>
+  <script>
+    const mWeb = document.getElementById("mWeb");
+    const mTheme = document.getElementById("mTheme");
+    const mNotes = document.getElementById("mNotes");
+    mWeb.addEventListener("click", function(){
+      mWeb.style.background = "black"
+            mNotes.style.background = ""
+      mTheme.style.background = ""
+      document.querySelector(".dashboard__content").innerHTML = `<h1> manage website </h1>`
+    })
+    mTheme.addEventListener("click", function(){
+      mTheme.style.background = "black"
+            mNotes.style.background = ""
+      mWeb.style.background = ""
+      document.querySelector(".dashboard__content").innerHTML = `<h1> manage theme </h1>`
+    })
+    mNotes.addEventListener("click", function(){
+      mNotes.style.background = "black"
+      mTheme.style.background = ""
+      mWeb.style.background = ""
+      document.querySelector(".dashboard__content").innerHTML = `<h1> manage notes </h1>`
+    })
+  </script>
   <script src="js/sidebar.js"></script>
   <script src="js/profile.js"></script>
 </body>

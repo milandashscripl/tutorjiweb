@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .slider{
     height: 60vh;
     overflow: hidden;
@@ -7,11 +10,11 @@
 }
 h1.myHeadings {
     color: orangered;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 900;  /* Super bold */
     text-transform: uppercase;  /* Makes it all caps for a stronger impact */
     letter-spacing: 2px;  /* Adds spacing for a stylish look */
-    padding: 10px 30px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 img.slider__img{

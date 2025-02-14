@@ -4,7 +4,7 @@ document.getElementById('sidebar').innerHTML = `
   <ul>
     <li><a href="admin-dashboard.html"><i>🏠</i> Dashboard</a></li>
     <li><a href="admin-proflile.html"><i>👨</i> Admin Profile</a></li>
-    <li><a href="inquiary.html"><i>❓</i> Inquiry</a></li>
+    <li><a href="inquiary.html"><i>❓</i> Queries</a></li>
     <li><a href="students.html"><i>🎓</i> Students</a></li>
     <li><a href="teachers.html"><i>👩‍🏫</i> Teachers</a></li>
     <li><a href="analitics.html"><i>📊</i> Analytics</a></li>
