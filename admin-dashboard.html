@@ -8,6 +8,40 @@
   <link rel="stylesheet" href="css/admin.css">
   <link rel="stylesheet" href="css/styles2.css">
   <link rel="stylesheet" href="css/cards.css">
+  <style>
+    form {
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    label {
+      font-weight: bold;
+    }
+  
+    input {
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+  
+    button {
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  
+    button:hover {
+      background: darkgreen;
+    }
+  </style>  
 </head>
 <body>
   <!-- Sidebar -->
@@ -21,34 +55,86 @@
     <div class="content">
       <!-- <h1>Welcome to the Admin Dashboard</h1> -->
       <div class="card card--flex card--transparent">
-        <div class="card dashboard__card card--orange" id="mWeb">Manage Website</div>
+        <div class="card dashboard__card card--orange" id="mWeb">Manage Portal</div>
         <div class="card dashboard__card card--blue" id="mTheme">Manage Theme</div>
-        <div class="card dashboard__card card--green" id="mNotes">Manage Notes</div>
+        <div class="card dashboard__card card--green" id="mNotes">Manage Plans</div>
       </div>
       <div class="dashboard__content"></div>
     </div>
   </div>
   <script>
+  const colorList = [
+  "red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "cyan", "magenta",
+  "lime", "teal", "navy", "gold", "silver", "maroon", "olive", "beige", "coral", "crimson",
+  "darkblue", "darkcyan", "darkgreen", "darkorange", "darkred", "deepskyblue", "dodgerblue",
+  "firebrick", "forestgreen", "fuchsia", "gainsboro", "goldenrod", "greenyellow", "hotpink",
+  "indianred", "indigo", "khaki", "lavender", "lightblue", "lightcoral", "lightcyan",
+  "lightgoldenrodyellow", "lightgreen", "lightpink", "lightsalmon", "lightseagreen",
+  "lightskyblue", "lightslategray", "lightsteelblue", "limegreen", "mediumaquamarine",
+  "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue",
+  "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream",
+  "mistyrose", "moccasin", "navajowhite", "oldlace", "orangered", "palegoldenrod",
+  "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "plum",
+  "powderblue", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen",
+  "sienna", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan",
+  "thistle", "tomato", "turquoise", "violet", "wheat", "whitesmoke", "yellowgreen"
+];
+
     const mWeb = document.getElementById("mWeb");
     const mTheme = document.getElementById("mTheme");
     const mNotes = document.getElementById("mNotes");
+    const portal = `<div class="card dashboard__card card--pink"> Students </div>
+    <div class="card dashboard__card card--mediumvioletred"> Teahcers </div>
+    <div class="card dashboard__card card--tomato"> Profile </div>
+    <div class="card dashboard__card card--slategray"> Queries </div>
+    <div class="card dashboard__card card--violet"> Others </div>`
+  
+    // Create a container
+const container = document.createElement("div");
+
+  colorList.forEach(color => {
+  const colorDiv = document.createElement("div");
+  colorDiv.className = `card dashboard__card card--${color}`;
+  colorDiv.textContent = color;
+  container.appendChild(colorDiv);
+});
+    mWeb.style.background = "black"
+            mNotes.style.background = ""
+      mTheme.style.background = ""
+      document.querySelector(".dashboard__content").innerHTML = portal
     mWeb.addEventListener("click", function(){
       mWeb.style.background = "black"
             mNotes.style.background = ""
       mTheme.style.background = ""
-      document.querySelector(".dashboard__content").innerHTML = `<h1> manage website </h1>`
+      document.querySelector(".dashboard__content").innerHTML = ''
+      document.querySelector(".dashboard__content").innerHTML = portal
     })
     mTheme.addEventListener("click", function(){
       mTheme.style.background = "black"
-            mNotes.style.background = ""
+      mNotes.style.background = ""
       mWeb.style.background = ""
-      document.querySelector(".dashboard__content").innerHTML = `<h1> manage theme </h1>`
+      document.querySelector(".dashboard__content").innerHTML = ''
+      // Append the container to the dashboard content
+document.querySelector(".dashboard__content").appendChild(container);
     })
     mNotes.addEventListener("click", function(){
       mNotes.style.background = "black"
       mTheme.style.background = ""
       mWeb.style.background = ""
-      document.querySelector(".dashboard__content").innerHTML = `<h1> manage notes </h1>`
+      document.querySelector(".dashboard__content").innerHTML = ''
+      document.querySelector(".dashboard__content").innerHTML = `<form id="planForm">
+  <label for="planName">Plan Name:</label>
+  <input type="text" id="planName" name="planName" required>
+
+  <label for="planValue">Plan Value:</label>
+  <input type="number" id="planValue" name="planValue" required>
+
+  <label for="planDuration">Plan Duration:</label>
+  <input type="text" id="planDuration" name="planDuration" required>
+
+  <button type="submit">Add Plan</button>
+</form>
+`
     })
   </script>
   <script src="js/sidebar.js"></script>
