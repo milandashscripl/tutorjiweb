@@ -86,7 +86,7 @@ img.slider__img{
 }
 .plans__card__body{
     padding: 5px 15px;
-    background: orangered;
+    background: blue;
     color: whitesmoke;
 }
 .card__plan{
@@ -110,7 +110,7 @@ img.slider__img{
     background: goldenrod;
 }
 .btn--orangered{
-    background: orangered;
+    background: blue;
 }
 .btn--dlt{
     background: red;
