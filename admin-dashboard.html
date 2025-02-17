@@ -60,6 +60,7 @@
         <div class="card dashboard__card card--green" id="mNotes">Manage Plans</div>
       </div>
       <div class="dashboard__content"></div>
+      <div id="plansContainer"></div> <!-- Plans will be added here -->
     </div>
   </div>
   <script>
@@ -122,18 +123,21 @@ document.querySelector(".dashboard__content").appendChild(container);
       mTheme.style.background = ""
       mWeb.style.background = ""
       document.querySelector(".dashboard__content").innerHTML = ''
-      document.querySelector(".dashboard__content").innerHTML = `<form id="planForm">
-  <label for="planName">Plan Name:</label>
-  <input type="text" id="planName" name="planName" required>
+      document.querySelector(".dashboard__content").innerHTML = `   <form id="planForm" enctype="multipart/form-data">
+      <label for="planName">Plan Name:</label>
+      <input type="text" id="planName" name="planName" required>
 
-  <label for="planValue">Plan Value:</label>
-  <input type="number" id="planValue" name="planValue" required>
+      <label for="planValue">Plan Value (₹):</label>
+      <input type="number" id="planValue" name="planValue" required>
 
-  <label for="planDuration">Plan Duration:</label>
-  <input type="text" id="planDuration" name="planDuration" required>
+      <label for="planDuration">Plan Duration:</label>
+      <input type="text" id="planDuration" name="planDuration" required>
 
-  <button type="submit">Add Plan</button>
-</form>
+      <label for="planBanner">Plan Banner:</label>
+      <input type="file" id="planBanner" name="planBanner" accept="image/*" required>
+
+      <button type="submit">Add Plan</button>
+    </form>
 `
     })
   </script>
