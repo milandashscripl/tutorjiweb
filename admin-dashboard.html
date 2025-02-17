@@ -60,7 +60,7 @@
         <div class="card dashboard__card card--green" id="mNotes">Manage Plans</div>
       </div>
       <div class="dashboard__content"></div>
-      <div id="plansContainer"></div> <!-- Plans will be added here -->
+      <div id="plansContainer" class="card card--transparent"></div> <!-- Plans will be added here -->
     </div>
   </div>
   <script>
@@ -92,6 +92,7 @@
   
     // Create a container
 const container = document.createElement("div");
+const plansContainer = document.getElementById("plansContainer");
 
   colorList.forEach(color => {
   const colorDiv = document.createElement("div");
@@ -138,7 +139,6 @@ document.querySelector(".dashboard__content").appendChild(container);
 
       <button type="submit">Add Plan</button>
     </form>
-    <div id="plansContainer"></div>
   `;
 
   // Add Form Submit Event Listener
@@ -178,7 +178,6 @@ async function fetchPlans() {
   try {
     const response = await fetch("http://tutorji.onrender.com/api/plans");
     const plans = await response.json();
-    const plansContainer = document.getElementById("plansContainer");
 
     plansContainer.innerHTML = ""; // Clear previous plans
 
