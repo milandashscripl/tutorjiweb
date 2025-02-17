@@ -152,6 +152,7 @@ img.slider__img{
 }
 .studentsCard li, .teachersCard li{
     list-style: none;
+    font-size: x-small;
 }
 .studentsCard__pic, .teachersCard__pic{
     width: 70px;
