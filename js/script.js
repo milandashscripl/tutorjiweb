@@ -103,7 +103,7 @@ async function fetchPlans() {
         </div>
         <div class="plans__card__body">
           <h3 style="text-align: center">${plan.planName}</h3>
-          <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
+          <div class="card__plan">&#8377;${plan.planValue}/${plan.planDuration}</div>
         </div>
         <div class="card__footer">
           <button class="card__footer__btn btn--white">Subscribe</button>
