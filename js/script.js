@@ -84,3 +84,36 @@ fetchUsers('students', 'studentsList');
 // Fetch and display teachers
 fetchUsers('teachers', 'teachersList');
 
+
+
+const plansContainer = document.getElementById("plansContainer");
+async function fetchPlans() {
+  try {
+    const response = await fetch("https://tutorji.onrender.com/api/plans");
+    const plans = await response.json();
+
+    plansContainer.innerHTML = ""; // Clear previous plans
+
+    plans.forEach(plan => {
+      const planCard = document.createElement("div");
+      planCard.className = "card padding--0 plans__card";
+      planCard.innerHTML = `
+        <div class="card__header">
+          <img src="https://tutorji.onrender.com/${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
+        </div>
+        <div class="plans__card__body">
+          <h3 style="text-align: center">${plan.planName}</h3>
+          <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
+        </div>
+        <div class="card__footer">
+          <button class="card__footer__btn btn--orangered">Purchase</button>
+        </div>
+      `;
+
+      plansContainer.appendChild(planCard);
+    });
+  } catch (error) {
+    console.error("Error fetching plans:", error);
+  }
+}
+fetchPlans();
