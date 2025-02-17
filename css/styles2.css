@@ -33,6 +33,9 @@ img.slider__img{
 .padding--0{
     padding:0;
 }
+.padding--10{
+    padding: 10px;
+}
 .subscriptions, .plans, .about{
     display: flex;
     flex-wrap: wrap;
@@ -193,3 +196,6 @@ img.slider__img{
         text-align: center;
     }
 }
+
+
+

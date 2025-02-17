@@ -175,30 +175,60 @@
 
     <script src="js/script.js"></script>
     <script>
-        function sendMessage() {
-            const userInput = document.getElementById("userInput");
-            const chatBox = document.getElementById("chatBox");
-            const messageText = userInput.value.trim();
-
-            if (messageText !== "") {
-                const userMessage = document.createElement("div");
-                userMessage.className = "message user-message";
-                userMessage.textContent = messageText;
-                chatBox.appendChild(userMessage);
-                chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
-
-                setTimeout(() => {
-                    const botReply = document.createElement("div");
-                    botReply.className = "message bot-message";
-                    botReply.textContent = "I'm just a demo bot!";
-                    chatBox.appendChild(botReply);
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                }, 1000);
-
-                userInput.value = "";
-            }
+      document.getElementById("planForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+  
+        const formData = new FormData();
+        formData.append("planName", document.getElementById("planName").value);
+        formData.append("planValue", document.getElementById("planValue").value);
+        formData.append("planDuration", document.getElementById("planDuration").value);
+        formData.append("planBanner", document.getElementById("planBanner").files[0]);
+  
+        // Send data to backend
+        const response = await fetch("http://localhost:5000/api/plans", {
+          method: "POST",
+          body: formData
+        });
+  
+        if (response.ok) {
+          const newPlan = await response.json();
+          createPlanCard(newPlan);
         }
+  
+        // Clear form
+        this.reset();
+      });
+  
+      function createPlanCard(plan) {
+        const plansContainer = document.getElementById("plansContainer");
+  
+        const planCard = document.createElement("div");
+        planCard.classList.add("card");
+  
+        planCard.innerHTML = `
+          <div class="card__header">
+            <img src="http://localhost:5000/${plan.planBanner}" alt="Plan Image">
+          </div>
+          <div class="plans__card__body">
+            <h3>${plan.planName}</h3>
+            <div class="card__plan">₹${plan.planValue}/${plan.planDuration}</div>
+          </div>
+          <div class="card__footer">
+            <button class="btn--orangered">Purchase</button>
+          </div>
+        `;
+  
+        plansContainer.appendChild(planCard);
+      }
+  
+      // Fetch and display all plans from backend when page loads
+      async function fetchPlans() {
+        const response = await fetch("http://localhost:5000/api/plans");
+        const plans = await response.json();
+        plans.forEach(createPlanCard);
+      }
+  
+      fetchPlans();
     </script>
-
   </body>
 </html>

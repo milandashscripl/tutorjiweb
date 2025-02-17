@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    .dashboard__content {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin: 10px 0;
+    }
+
+    .card__header img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .plans__card__body {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .card__plan {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .btn--orangered {
+      background: orangered;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard__content">
+    <form id="planForm">
+      <label for="planName">Plan Name:</label>
+      <input type="text" id="planName" name="planName" required>
+
+      <label for="planValue">Plan Value (₹):</label>
+      <input type="number" id="planValue" name="planValue" required>
+
+      <label for="planDuration">Plan Duration:</label>
+      <input type="text" id="planDuration" name="planDuration" required>
+
+      <button type="submit">Add Plan</button>
+    </form>
+
+    <div id="plansContainer"></div> <!-- Plans will be added here -->
+  </div>
+
+  <script>
+    document.getElementById("planForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const planName = document.getElementById("planName").value;
+      const planValue = document.getElementById("planValue").value;
+      const planDuration = document.getElementById("planDuration").value;
+
+      const planData = { planName, planValue, planDuration };
+
+      // Send data to backend
+      const response = await fetch("http://localhost:5000/api/plans", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(planData)
+      });
+
+      if (response.ok) {
+        const newPlan = await response.json();
+        createPlanCard(newPlan);
+      }
+
+      // Clear form
+      this.reset();
+    });
+
+    function createPlanCard(plan) {
+      const plansContainer = document.getElementById("plansContainer");
+
+      const planCard = document.createElement("div");
+      planCard.classList.add("card");
+
+      planCard.innerHTML = `
+        <div class="card__header">
+          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStGHmlhYYogZSunBq2IFvrW9RCRNC1CthvCIjHiiXWwU3SVelksrQDWGkM7XaMQ3FBwGAvxn70ESoi7iaTZ07FrA" alt="Plan Image">
+        </div>
+        <div class="plans__card__body">
+          <h3>${plan.planName}</h3>
+          <div class="card__plan">₹${plan.planValue}/${plan.planDuration}</div>
+        </div>
+        <div class="card__footer">
+          <button class="btn--orangered">Purchase</button>
+        </div>
+      `;
+
+      plansContainer.appendChild(planCard);
+    }
+
+    // Fetch and display all plans from backend when page loads
+    async function fetchPlans() {
+      const response = await fetch("http://localhost:5000/api/plans");
+      const plans = await response.json();
+      plans.forEach(createPlanCard);
+    }
+
+    fetchPlans();
+  </script>
+
+</body>
+</html>
