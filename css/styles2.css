@@ -90,10 +90,9 @@ img.slider__img{
 .plans__card__body{
     padding: 5px 15px;
     background: white;
-    color: orangered;
 }
 .card__plan{
-    color: yellow;
+    color: orangered;
     font-size: 2em;
     text-align: center;
 }
@@ -114,6 +113,7 @@ img.slider__img{
 }
 .btn--white{
     background: white;
+    color: orangered;
 }
 .btn--dlt{
     background: red;
