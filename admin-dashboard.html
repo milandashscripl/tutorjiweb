@@ -152,7 +152,7 @@ document.querySelector(".dashboard__content").appendChild(container);
     formData.append("planBanner", document.getElementById("planBanner").files[0]);
 
     try {
-      const response = await fetch("http://localhost:5000/api/plans", {
+      const response = await fetch("https://tutorji.onrender.com/api/plans", {
         method: "POST",
         body: formData,
       });
