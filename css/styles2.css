@@ -89,8 +89,8 @@ img.slider__img{
 }
 .plans__card__body{
     padding: 5px 15px;
-    background: blue;
-    color: whitesmoke;
+    background: white;
+    color: orangered;
 }
 .card__plan{
     color: yellow;
@@ -101,7 +101,7 @@ img.slider__img{
     font-size: xx-small;
 }
 .card__footer{
-    background: #333;
+    background: orangered;
     height: 30px;
     text-align: center;
 }
@@ -112,8 +112,8 @@ img.slider__img{
 .btn--goldenrod{
     background: goldenrod;
 }
-.btn--orangered{
-    background: blue;
+.btn--white{
+    background: white;
 }
 .btn--dlt{
     background: red;

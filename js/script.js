@@ -106,7 +106,7 @@ async function fetchPlans() {
           <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
         </div>
         <div class="card__footer">
-          <button class="card__footer__btn btn--orangered">Purchase</button>
+          <button class="card__footer__btn btn--white">Purchase</button>
         </div>
       `;
 
