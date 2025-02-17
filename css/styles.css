@@ -20,14 +20,14 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
-  background: linear-gradient(to bottom right, #ff4081, orangered);
+  background: white;
 }
 
 .container {
   margin: 20px 0;
   padding: 30px;
   border-radius: 8px;
-  color: whitesmoke;
+  color: orangered;
   transition: all 0.3s ease-in-out;
 }
 
@@ -40,11 +40,12 @@ form {
   flex-direction: column;
 }
 
-input, textarea, button {
+input, textarea, button,select {
   margin-bottom: 15px;
   padding: 12px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid orangered;
+  outline: none;
   border-radius: 8px;
   background-color: #fff;
 }
@@ -55,7 +56,7 @@ input[type="file"] {
 }
 
 button {
-  background-color: #555;
+  background-color: orangered;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -66,7 +67,7 @@ button {
 }
 .addStudent{
   text-decoration: none;
-  color: white;
+  color: orangered;
   padding: 10px;
   text-transform: uppercase;
   border-radius: 5px;
