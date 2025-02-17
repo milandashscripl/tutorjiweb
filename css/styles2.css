@@ -39,7 +39,7 @@ img.slider__img{
 .subscriptions, .plans, .about{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
 }
 .card--transparent{
     background: transparent;
