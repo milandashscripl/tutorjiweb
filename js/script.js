@@ -99,7 +99,7 @@ async function fetchPlans() {
       planCard.className = "card padding--0 plans__card";
       planCard.innerHTML = `
         <div class="card__header">
-          <img src="https://tutorji.onrender.com/${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
+          <img src="${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
         </div>
         <div class="plans__card__body">
           <h3 style="text-align: center">${plan.planName}</h3>
