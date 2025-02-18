@@ -55,14 +55,14 @@
       <div class="content">
         <!-- <h1>Welcome to the Admin Dashboard</h1> -->
         <div class="card card--flex card--transparent">
-          <div class="card dashboard__card card--orangered" id="mPortal">
-            Manage Portal
+          <div class="card dashboard__card card--orangered" id="addAbout">
+            Add About
+          </div>
+          <div class="card dashboard__card card--green" id="view">
+            Add Plans
           </div>
           <div class="card dashboard__card card--blue" id="vPlans">
             View Plans
-          </div>
-          <div class="card dashboard__card card--green" id="adPlans">
-            Add Plans
           </div>
         </div>
         <div class="dashboard__content">
@@ -71,9 +71,9 @@
       </div>
     </div>
     <script>
-      const mPortal = document.getElementById("mPortal");
+      const addAbout = document.getElementById("addAbout");
       const vPlans = document.getElementById("vPlans");
-      const adPlans = document.getElementById("adPlans");
+      const view = document.getElementById("view");
       const portal = `<form id="aboutForm" enctype="multipart/form-data">
       <label for="aboutUs">About Us:</label>
       <input type="text" id="aboutUs" name="aboutUs">
@@ -88,31 +88,31 @@
       // Create a container
       const container = document.createElement("div");
       const plansContainer = document.getElementById("plansContainer");
-      mPortal.style.background = "black";
-      adPlans.style.background = "";
+      addAbout.style.background = "black";
+      view.style.background = "";
       vPlans.style.background = "";
       document.querySelector(".dashboard__content").innerHTML = portal;
-      mPortal.addEventListener("click", function () {
-        mPortal.style.background = "black";
-        adPlans.style.background = "";
+      addAbout.addEventListener("click", function () {
+        addAbout.style.background = "black";
+        view.style.background = "";
         vPlans.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         document.querySelector(".dashboard__content").innerHTML = portal;
       });
 
-      // view plans
+      // view
       vPlans.addEventListener("click", function () {
         vPlans.style.background = "black";
-        adPlans.style.background = "";
-        mPortal.style.background = "";
+        view.style.background = "";
+        addAbout.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         // Append the container to the dashboard content
         document.querySelector(".dashboard__content").appendChild(plansContainer);
       });
-      adPlans.addEventListener("click", function () {
-        adPlans.style.background = "black";
+      view.addEventListener("click", function () {
+        view.style.background = "black";
         vPlans.style.background = "";
-        mPortal.style.background = "";
+        addAbout.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = `
     <form id="planForm" enctype="multipart/form-data">
       <label for="planName">Plan Name:</label>
