@@ -173,7 +173,6 @@
         // Fetch and display existing plans
         fetchPlans();
       });
-
       async function fetchPlans() {
         try {
           const response = await fetch(
@@ -205,6 +204,8 @@
           console.error("Error fetching plans:", error);
         }
       }
+      fetchPlans();
+
     </script>
     <script src="js/sidebar.js"></script>
     <script src="js/profile.js"></script>
