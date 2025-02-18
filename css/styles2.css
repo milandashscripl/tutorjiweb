@@ -48,7 +48,7 @@ img.slider__img{
 
 .subscriptions__card,.plans__card{
     /* flex-basis: calc((100%-250px)/3); */
-    flex-basis: 60%;
+    flex-basis: 30%;
     flex-grow: -10;
     flex-shrink: 0;
     display: flex;
