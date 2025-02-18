@@ -178,7 +178,7 @@ img.slider__img{
     h1.myHeadings{
         text-align: center;
     }
-    .subscriptions,.plans{
+    .subscriptions,.plans, #plansContainer {
         flex-wrap: nowrap;
         overflow-x: scroll;
         justify-content: start;
