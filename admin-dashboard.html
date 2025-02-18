@@ -69,23 +69,6 @@
       </div>
     </div>
     <script>
-      //   const colorList = [
-      //   "red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "cyan", "magenta",
-      //   "lime", "teal", "navy", "gold", "silver", "maroon", "olive", "beige", "coral", "crimson",
-      //   "darkblue", "darkcyan", "darkgreen", "darkorange", "darkred", "deepskyblue", "dodgerblue",
-      //   "firebrick", "forestgreen", "fuchsia", "gainsboro", "goldenrod", "greenyellow", "hotpink",
-      //   "indianred", "indigo", "khaki", "lavender", "lightblue", "lightcoral", "lightcyan",
-      //   "lightgoldenrodyellow", "lightgreen", "lightpink", "lightsalmon", "lightseagreen",
-      //   "lightskyblue", "lightslategray", "lightsteelblue", "limegreen", "mediumaquamarine",
-      //   "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue",
-      //   "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream",
-      //   "mistyrose", "moccasin", "navajowhite", "oldlace", "orangered", "palegoldenrod",
-      //   "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "plum",
-      //   "powderblue", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen",
-      //   "sienna", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan",
-      //   "thistle", "tomato", "turquoise", "violet", "wheat", "whitesmoke", "yellowgreen"
-      // ];
-
       const mPortal = document.getElementById("mPortal");
       const vPlans = document.getElementById("vPlans");
       const mPlans = document.getElementById("mPlans");
@@ -98,13 +81,6 @@
       // Create a container
       const container = document.createElement("div");
       const plansContainer = document.getElementById("plansContainer");
-
-      //   colorList.forEach(color => {
-      //   const colorDiv = document.createElement("div");
-      //   colorDiv.className = `card dashboard__card card--${color}`;
-      //   colorDiv.textContent = color;
-      //   container.appendChild(colorDiv);
-      // });
       mPortal.style.background = "black";
       mPlans.style.background = "";
       vPlans.style.background = "";
@@ -116,13 +92,15 @@
         document.querySelector(".dashboard__content").innerHTML = "";
         document.querySelector(".dashboard__content").innerHTML = portal;
       });
+
+      // view plans
       vPlans.addEventListener("click", function () {
         vPlans.style.background = "black";
         mPlans.style.background = "";
         mPortal.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         // Append the container to the dashboard content
-        document.querySelector(".dashboard__content").appendChild(plansContainer);
+        document.querySelector(".dashboard__content").innerHTML = `<div id="plansContainer"> </div>`
       });
       mPlans.addEventListener("click", function () {
         mPlans.style.background = "black";
