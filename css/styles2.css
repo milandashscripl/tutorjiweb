@@ -36,7 +36,7 @@ img.slider__img{
 .padding--10{
     padding: 10px;
 }
-.subscriptions, .plans, .about{
+.subscriptions, .plans, .about, #planContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
