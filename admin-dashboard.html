@@ -65,7 +65,9 @@
             Manage Plans
           </div>
         </div>
-        <div class="dashboard__content"></div>
+        <div class="dashboard__content">
+          <div id="plansContainer"></div>
+        </div>
       </div>
     </div>
     <script>
@@ -100,7 +102,7 @@
         mPortal.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         // Append the container to the dashboard content
-        document.querySelector(".dashboard__content").innerHTML = `<div id="plansContainer"> </div>`
+        document.querySelector(".dashboard__content").appendChild(plansContainer);
       });
       mPlans.addEventListener("click", function () {
         mPlans.style.background = "black";
