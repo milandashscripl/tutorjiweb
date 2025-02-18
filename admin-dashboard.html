@@ -60,7 +60,6 @@
         <div class="card dashboard__card card--green" id="mNotes">Manage Plans</div>
       </div>
       <div class="dashboard__content"></div>
-      <div id="plansContainer" class="card card--transparent"></div> <!-- Plans will be added here -->
     </div>
   </div>
   <script>
@@ -88,7 +87,7 @@
     <div class="card dashboard__card card--mediumvioletred"> Teahcers </div>
     <div class="card dashboard__card card--tomato"> Profile </div>
     <div class="card dashboard__card card--slategray"> Queries </div>
-    <div class="card dashboard__card card--violet"> Others </div>`
+    <div class="card dashboard__card card--violet"> About and Copyrights </div>`
   
     // Create a container
 const container = document.createElement("div");
@@ -139,6 +138,7 @@ document.querySelector(".dashboard__content").appendChild(container);
 
       <button type="submit">Add Plan</button>
     </form>
+      <div id="plansContainer" class="card card--transparent"></div> <!-- Plans will be added here -->
   `;
 
   // Add Form Submit Event Listener
