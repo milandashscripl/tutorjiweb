@@ -61,8 +61,8 @@
           <div class="card dashboard__card card--blue" id="vPlans">
             View Plans
           </div>
-          <div class="card dashboard__card card--green" id="mPlans">
-            Manage Plans
+          <div class="card dashboard__card card--green" id="adPlans">
+            Add Plans
           </div>
         </div>
         <div class="dashboard__content">
@@ -73,23 +73,28 @@
     <script>
       const mPortal = document.getElementById("mPortal");
       const vPlans = document.getElementById("vPlans");
-      const mPlans = document.getElementById("mPlans");
-      const portal = `<div class="card dashboard__card card--pink"> Students </div>
-    <div class="card dashboard__card card--mediumvioletred"> Teahcers </div>
-    <div class="card dashboard__card card--tomato"> Profile </div>
-    <div class="card dashboard__card card--slategray"> Queries </div>
-    <div class="card dashboard__card card--violet"> About and Copyrights </div>`;
+      const adPlans = document.getElementById("adPlans");
+      const portal = `<form id="aboutForm" enctype="multipart/form-data">
+      <label for="aboutUs">About Us:</label>
+      <input type="text" id="aboutUs" name="aboutUs">
+
+      <label for="copyRight">Copy Right:</label>
+      <input type="text" id="copyRight" name="copyRight">
+
+      <button type="submit">Submit</button>
+    </form>
+`;
 
       // Create a container
       const container = document.createElement("div");
       const plansContainer = document.getElementById("plansContainer");
       mPortal.style.background = "black";
-      mPlans.style.background = "";
+      adPlans.style.background = "";
       vPlans.style.background = "";
       document.querySelector(".dashboard__content").innerHTML = portal;
       mPortal.addEventListener("click", function () {
         mPortal.style.background = "black";
-        mPlans.style.background = "";
+        adPlans.style.background = "";
         vPlans.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         document.querySelector(".dashboard__content").innerHTML = portal;
@@ -98,14 +103,14 @@
       // view plans
       vPlans.addEventListener("click", function () {
         vPlans.style.background = "black";
-        mPlans.style.background = "";
+        adPlans.style.background = "";
         mPortal.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         // Append the container to the dashboard content
         document.querySelector(".dashboard__content").appendChild(plansContainer);
       });
-      mPlans.addEventListener("click", function () {
-        mPlans.style.background = "black";
+      adPlans.addEventListener("click", function () {
+        adPlans.style.background = "black";
         vPlans.style.background = "";
         mPortal.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = `
