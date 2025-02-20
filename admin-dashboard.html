@@ -70,6 +70,8 @@
         </div>
       </div>
     </div>
+    <div class="cover" id="cover" ></div>
+
     <script>
       const addAbout = document.getElementById("addAbout");
       const vPlans = document.getElementById("vPlans");
@@ -107,7 +109,9 @@
         addAbout.style.background = "";
         document.querySelector(".dashboard__content").innerHTML = "";
         // Append the container to the dashboard content
-        document.querySelector(".dashboard__content").appendChild(plansContainer);
+        document
+          .querySelector(".dashboard__content")
+          .appendChild(plansContainer);
       });
       view.addEventListener("click", function () {
         view.style.background = "black";
@@ -199,19 +203,34 @@
           <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
         </div>
         <div class="card__footer">
-          <button class="card__footer__btn btn--update">Edit</button>
-          <button class="card__footer__btn btn--dlt">Delete</button>
+          <button class="card__footer__btn updatePlan">Edit</button>
+          <button class="card__footer__btn dltPlan">Delete</button>
         </div>
       `;
 
             plansContainer.appendChild(planCard);
+
+            document.querySelector(".updatePlan").addEventListener("click", function(){
+              document.getElementById('cover').style.display = 'flex';
+              const cover = document.getElementById("cover");
+      cover.innerHTML = `<div class="subsBox">
+  <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
+  <h3>Pay &#8377;${plan.planValue}/- Now</h3>
+  <button class="btn--update">Pay</button>
+  <button class="btn--dlt">Cancell</button>
+</div>`;
+            })
+
+            
           });
         } catch (error) {
           console.error("Error fetching plans:", error);
         }
       }
       fetchPlans();
-
+    </script>
+    <script>
+      
     </script>
     <script src="js/sidebar.js"></script>
     <script src="js/profile.js"></script>
