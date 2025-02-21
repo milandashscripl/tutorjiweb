@@ -141,6 +141,7 @@ async function fetchPlans() {
           cover.style.display = "none"; // Hide if already visible
         }
         const update = document.querySelector(".updatePlan");
+        const del = document.querySelector(".dltPlan");
         update.addEventListener('click', function(){
             cover.innerHTML = ``;
             cover.innerHTML = `<form id="updatePlanForm" enctype="multipart/form-data">
@@ -158,6 +159,15 @@ async function fetchPlans() {
 
       <button type="submit" class = "btn--update">Update Plan</button>
     </form>`
+        })
+        del.addEventListener('click', function(){
+            cover.innerHTML = ``;
+            cover.innerHTML = `      <div class="subsBox">
+        <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
+        <h3>Pay &#8377;${plan.planValue}/- Now</h3>
+        <button class="card__footer__btn btn--freeze cancell">Edit</button>
+        <button class="card__footer__btn btn--dlt confirm">Delete</button>
+      </div>`
         })
       });
 
