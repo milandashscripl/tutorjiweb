@@ -207,10 +207,27 @@
           <button class="card__footer__btn dltPlan">Delete</button>
         </div>
       `;
+      planCard.addEventListener('click', () => {
+        window.location.href = 'plan-details.html'; // Redirect to login page
+    })
 
             plansContainer.appendChild(planCard);
 
-                     });
+            document
+              .querySelector(".updatePlan")
+              .addEventListener("click", function () {
+                const cover = document.getElementById("cover");
+                if(cover.style.display == 'none'){
+                  cover.style.display = "flex"
+                  cover.innerHTML = `<div class="subsBox">
+                <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
+                <h3>Pay &#8377;${plan.planValue}/- Now</h3>
+              </div>`;
+                } else{
+                  cover.style.display = "none"
+                }
+              });
+          });
         } catch (error) {
           console.error("Error fetching plans:", error);
         }
