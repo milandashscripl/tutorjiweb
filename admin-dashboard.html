@@ -208,18 +208,25 @@
           // <button class="card__footer__btn dltPlan">Delete</button>
         </div>
       `;
-            planCard.addEventListener("click", () => {
-              // window.location.href = "./plan-details.html"; // Redirect to plan-details page
-                if(cover.style.display === "none"){
-                  cover.style.display = "flex"
-                  cover.innerHTML = `<div class="subsBox">
-                <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
-                <h3>Pay &#8377;${plan.planValue}/- Now</h3>
-              </div>`;
-                } else{
-                  cover.style.display = "none"
-                }
-            });
+      planCard.addEventListener("click", () => {
+  if (!cover) {
+    console.error("Cover element not found!");
+    return;
+  }
+
+  const isHidden = window.getComputedStyle(cover).display === "none";
+
+  if (isHidden) {
+    cover.innerHTML = `
+      <div class="subsBox">
+        <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
+        <h3>Pay &#8377;${plan.planValue}/- Now</h3>
+      </div>`;
+    cover.style.display = "flex"; // Show after injecting HTML
+  } else {
+    cover.style.display = "none"; // Hide if already visible
+  }
+});
 
             plansContainer.appendChild(planCard);
           });
