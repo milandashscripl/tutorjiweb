@@ -165,9 +165,17 @@ async function fetchPlans() {
             cover.innerHTML = `      <div class="subsBox">
         <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
         <h3>Pay &#8377;${plan.planValue}/- Now</h3>
-        <button class="card__footer__btn btn--freeze cancell">Edit</button>
         <button class="card__footer__btn btn--dlt confirm">Delete</button>
+        <button class="card__footer__btn btn--freeze cancell">Cancell</button>
       </div>`
+      const cancell = document.querySelector(".cancell");
+      const confirm = document.querySelector(".confirm");
+      cancell.addEventListener('click', function(){
+        cover.style.display = "none"
+      })
+      confirm.addEventListener('click', function(){
+        
+      })
         })
       });
 
