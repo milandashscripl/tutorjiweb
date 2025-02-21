@@ -182,6 +182,7 @@
         // Fetch and display existing plans
         fetchPlans();
       });
+      const cover = document.querySelector(".cover");
       async function fetchPlans() {
         try {
           const response = await fetch(
@@ -203,12 +204,21 @@
           <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
         </div>
         <div class="card__footer">
-          <button class="card__footer__btn updatePlan">Edit</button>
-          <button class="card__footer__btn dltPlan">Delete</button>
+          // <button class="card__footer__btn updatePlan">Edit</button>
+          // <button class="card__footer__btn dltPlan">Delete</button>
         </div>
       `;
             planCard.addEventListener("click", () => {
-              window.location.href = "./plan-details.html"; // Redirect to plan-details page
+              // window.location.href = "./plan-details.html"; // Redirect to plan-details page
+                if(cover.style.display == 'none'){
+                  cover.style.display = "flex"
+                  cover.innerHTML = `<div class="subsBox">
+                <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
+                <h3>Pay &#8377;${plan.planValue}/- Now</h3>
+              </div>`;
+                } else{
+                  cover.style.display = "none"
+                }
             });
 
             plansContainer.appendChild(planCard);
