@@ -210,7 +210,7 @@
       `;
             planCard.addEventListener("click", () => {
               // window.location.href = "./plan-details.html"; // Redirect to plan-details page
-                if(cover.style.display == 'none'){
+                if(cover.style.display === "none"){
                   cover.style.display = "flex"
                   cover.innerHTML = `<div class="subsBox">
                 <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
