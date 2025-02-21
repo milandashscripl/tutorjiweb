@@ -204,29 +204,32 @@
           <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
         </div>
         <div class="card__footer">
-          // <button class="card__footer__btn updatePlan">Edit</button>
-          // <button class="card__footer__btn dltPlan">Delete</button>
+          
         </div>
       `;
-      planCard.addEventListener("click", () => {
-  if (!cover) {
-    console.error("Cover element not found!");
-    return;
-  }
+            planCard.addEventListener("click", () => {
+              if (!cover) {
+                console.error("Cover element not found!");
+                return;
+              }
 
-  const isHidden = window.getComputedStyle(cover).display === "none";
+              const isHidden =
+                window.getComputedStyle(cover).display === "none";
 
-  if (isHidden) {
-    cover.innerHTML = `
+              if (isHidden) {
+                cover.innerHTML = `
       <div class="subsBox">
         <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
         <h3>Pay &#8377;${plan.planValue}/- Now</h3>
-      </div>`;
-    cover.style.display = "flex"; // Show after injecting HTML
-  } else {
-    cover.style.display = "none"; // Hide if already visible
-  }
-});
+      </div>
+  <button class="card__footer__btn updatePlan">Edit</button>
+         <button class="card__footer__btn dltPlan">Delete</button>
+      `;
+                cover.style.display = "flex"; // Show after injecting HTML
+              } else {
+                cover.style.display = "none"; // Hide if already visible
+              }
+            });
 
             plansContainer.appendChild(planCard);
           });
