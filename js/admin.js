@@ -142,6 +142,8 @@ async function fetchPlans() {
         }
         const update = document.querySelector(".updatePlan");
         const del = document.querySelector(".dltPlan");
+        const planId = localStorage.getItem('planId');
+        const formData = new FormData();
         update.addEventListener("click", function () {
           cover.innerHTML = ``;
           cover.innerHTML = `<form id="updatePlanForm" enctype="multipart/form-data">
@@ -163,7 +165,53 @@ async function fetchPlans() {
           document.getElementById("planValue").value = plan.planValue;
           document.getElementById("planDuration").value = plan.planDuration;
           document.getElementById("planBanner").value = plan.planBanner;
+
+
+          document.getElementById('updatePlanForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+          
+          
+            // Append form fields to FormData
+            formData.append("planName", document.getElementById("planName").value);
+      formData.append("planValue", document.getElementById("planValue").value);
+      formData.append(
+        "planDuration",
+        document.getElementById("planDuration").value
+      );
+      formData.append(
+        "planBanner",
+        document.getElementById("planBanner").files[0]
+      );
+          
+          
+          
+            try {
+              const response = await fetch(`https://tutorji.onrender.com/api/plans/update/${planId}`, {
+                method: 'PATCH',
+                body: formData,
+              });
+          
+              if (response.ok) {
+                const data = await response.json();
+                alert('plan updated successfully!');
+                console.log('Updated user:', data.user);
+                window.location.href = '/admin-dashboard.html';
+              } else {
+                const error = await response.json();
+                alert(`Update failed: ${error.message}`);
+              }
+            } catch (err) {
+              console.error('Error updating plan:', err);
+              alert('An unexpected error occurred. Please try again later.');
+            }
+          });
         });
+
+
+
+        // delete plan 
+
+        
         del.addEventListener("click", function () {
           cover.innerHTML = ``;
           cover.innerHTML = `      <div class="subsBox">
