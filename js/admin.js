@@ -160,6 +160,9 @@ async function fetchPlans() {
       <button type="submit" class = "btn--update">Update Plan</button>
     </form>`
     document.getElementById("planName").value = plan.planName
+    document.getElementById("planValue").value = plan.planValue
+    document.getElementById("planDuration").value = plan.planDuration
+    document.getElementById("planBanner").value = plan.planBanner
         })
         del.addEventListener('click', function(){
             cover.innerHTML = ``;
