@@ -159,6 +159,7 @@ async function fetchPlans() {
 
       <button type="submit" class = "btn--update">Update Plan</button>
     </form>`
+    document.getElementById("planName").value = plan.planName
         })
         del.addEventListener('click', function(){
             cover.innerHTML = ``;
