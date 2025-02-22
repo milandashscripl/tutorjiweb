@@ -142,45 +142,43 @@ async function fetchPlans() {
         }
         const update = document.querySelector(".updatePlan");
         const del = document.querySelector(".dltPlan");
-        update.addEventListener('click', function(){
-            cover.innerHTML = ``;
-            cover.innerHTML = `<form id="updatePlanForm" enctype="multipart/form-data">
+        update.addEventListener("click", function () {
+          cover.innerHTML = ``;
+          cover.innerHTML = `<form id="updatePlanForm" enctype="multipart/form-data">
       <label for="planName">Plan Name:</label>
-      <input type="text" id="planName" name="planName" required>
+      <input type="text" id="planName" name="planName">
 
       <label for="planValue">Plan Value (₹):</label>
-      <input type="number" id="planValue" name="planValue" required>
+      <input type="number" id="planValue" name="planValue">
 
       <label for="planDuration">Plan Duration:</label>
-      <input type="text" id="planDuration" name="planDuration" required>
+      <input type="text" id="planDuration" name="planDuration">
 
       <label for="planBanner">Plan Banner:</label>
-      <input type="file" id="planBanner" name="planBanner" accept="image/*" required>
+      <input type="file" id="planBanner" name="planBanner" accept="image/*">
 
       <button type="submit" class = "btn--update">Update Plan</button>
-    </form>`
-    document.getElementById("planName").value = plan.planName
-    document.getElementById("planValue").value = plan.planValue
-    document.getElementById("planDuration").value = plan.planDuration
-    document.getElementById("planBanner").value = plan.planBanner
-        })
-        del.addEventListener('click', function(){
-            cover.innerHTML = ``;
-            cover.innerHTML = `      <div class="subsBox">
+    </form>`;
+          document.getElementById("planName").value = plan.planName;
+          document.getElementById("planValue").value = plan.planValue;
+          document.getElementById("planDuration").value = plan.planDuration;
+          document.getElementById("planBanner").value = plan.planBanner;
+        });
+        del.addEventListener("click", function () {
+          cover.innerHTML = ``;
+          cover.innerHTML = `      <div class="subsBox">
         <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
         <h3>Pay &#8377;${plan.planValue}/- Now</h3>
         <button class="card__footer__btn btn--dlt confirm">Delete</button>
         <button class="card__footer__btn btn--freeze cancell">Cancell</button>
-      </div>`
-      const cancell = document.querySelector(".cancell");
-      const confirm = document.querySelector(".confirm");
-      cancell.addEventListener('click', function(){
-        cover.style.display = "none"
-      })
-      confirm.addEventListener('click', function(){
-        
-      })
-        })
+      </div>`;
+          const cancell = document.querySelector(".cancell");
+          const confirm = document.querySelector(".confirm");
+          cancell.addEventListener("click", function () {
+            cover.style.display = "none";
+          });
+          confirm.addEventListener("click", function () {});
+        });
       });
 
       plansContainer.appendChild(planCard);
