@@ -21,16 +21,16 @@ const aboutFormTemplate = `
 const planFormTemplate = `
   <form id="planForm" enctype="multipart/form-data">
     <label for="planName">Plan Name:</label>
-    <input type="text" id="planName" name="planName" required>
+    <input type="text" name="planName" required>
 
     <label for="planValue">Plan Value (₹):</label>
-    <input type="number" id="planValue" name="planValue" required>
+    <input type="number" name="planValue" required>
 
     <label for="planDuration">Plan Duration:</label>
-    <input type="text" id="planDuration" name="planDuration" required>
+    <input type="text" name="planDuration" required>
 
     <label for="planBanner">Plan Banner:</label>
-    <input type="file" id="planBanner" name="planBanner" accept="image/*" required>
+    <input type="file" name="planBanner" accept="image/*" required>
 
     <button type="submit">Add Plan</button>
   </form>
@@ -44,14 +44,14 @@ addAbout.addEventListener("click", () => {
 
 vPlans.addEventListener("click", () => {
   highlightTab(vPlans);
-  renderContent(""); // Clear content
+  renderContent("");
   document.querySelector(".dashboard__content").appendChild(plansContainer);
 });
 
 view.addEventListener("click", () => {
   highlightTab(view);
   renderContent(planFormTemplate);
-  handlePlanFormSubmit();
+  document.getElementById("planForm").addEventListener("submit", handlePlanFormSubmit);
   fetchPlans();
 });
 
@@ -65,23 +65,27 @@ function renderContent(content) {
   document.querySelector(".dashboard__content").innerHTML = content;
 }
 
-function handlePlanFormSubmit() {
-  document.getElementById("planForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+async function handlePlanFormSubmit(event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
 
-    try {
-      const response = await fetch("https://tutorji.onrender.com/api/plans", {
-        method: "POST",
-        body: formData,
-      });
+  try {
+    const response = await fetch("https://tutorji.onrender.com/api/plans", {
+      method: "POST",
+      body: formData,
+    });
 
-      response.ok ? alert("Plan added successfully!") : alert("Failed to add plan");
+    if (response.ok) {
+      alert("Plan added successfully!");
+      event.target.reset();
       fetchPlans();
-    } catch (error) {
-      console.error("Error:", error);
+    } else {
+      const error = await response.json();
+      alert(`Failed to add plan: ${error.message}`);
     }
-  });
+  } catch (error) {
+    console.error("Error adding plan:", error);
+  }
 }
 
 // 📄 Fetch and Display Plans
@@ -90,12 +94,9 @@ async function fetchPlans() {
     const response = await fetch("https://tutorji.onrender.com/api/plans");
     const plans = await response.json();
 
-    plansContainer.innerHTML = ""; // Clear old plans
+    plansContainer.innerHTML = plans.length ? "" : "<p>No plans available.</p>";
 
-    plans.forEach(plan => {
-      const planCard = createPlanCard(plan);
-      plansContainer.appendChild(planCard);
-    });
+    plans.forEach(plan => plansContainer.appendChild(createPlanCard(plan)));
   } catch (error) {
     console.error("Error fetching plans:", error);
   }
@@ -110,55 +111,42 @@ function createPlanCard(plan) {
       <img src="${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
     </div>
     <div class="plans__card__body">
-      <h3 style="text-align: center">${plan.planName}</h3>
-      <div class="card__plan">&#8377; ${plan.planValue} / ${plan.planDuration}</div>
+      <h3>${plan.planName}</h3>
+      <div class="card__plan">₹${plan.planValue} / ${plan.planDuration}</div>
+      <div class="plans__actions">
+        <button class="btn--update">Edit</button>
+        <button class="btn--dlt">Delete</button>
+      </div>
     </div>
   `;
 
-  planCard.addEventListener("click", () => showPlanOptions(plan));
+  planCard.querySelector(".btn--update").addEventListener("click", () => showUpdatePlanForm(plan));
+  planCard.querySelector(".btn--dlt").addEventListener("click", () => deletePlan(plan._id));
+
   return planCard;
 }
 
-// 📝 Plan Options (View, Update, Delete)
-function showPlanOptions(plan) {
-  if (!cover) return console.error("Cover element not found!");
-
-  const isHidden = window.getComputedStyle(cover).display === "none";
-  cover.innerHTML = isHidden ? `
-    <div class="subsBox">
-      <h1>&#8377;${plan.planValue} / ${plan.planDuration}</h1>
-      <h3>${plan.planName}</h3>
-      <button class="card__footer__btn btn--update updatePlan">Edit</button>
-      <button class="card__footer__btn btn--dlt dltPlan">Delete</button>
-    </div>` : "";
-
-  cover.style.display = isHidden ? "flex" : "none";
-
-  if (isHidden) {
-    document.querySelector(".updatePlan").addEventListener("click", () => updatePlanForm(plan));
-    document.querySelector(".dltPlan").addEventListener("click", () => deletePlan(plan._id));
-  }
-}
-
 // 🛠️ Update Plan Form
-function updatePlanForm(plan) {
+function showUpdatePlanForm(plan) {
   cover.innerHTML = `
-    <form id="updatePlanForm" enctype="multipart/form-data">
-      <label for="planName">Plan Name:</label>
-      <input type="text" id="planName" value="${plan.planName}" required>
+    <form id="updatePlanForm" enctype="multipart/form-data" class="update__form">
+      <label>Plan Name:</label>
+      <input type="text" name="planName" value="${plan.planName}" required>
 
-      <label for="planValue">Plan Value (₹):</label>
-      <input type="number" id="planValue" value="${plan.planValue}" required>
+      <label>Plan Value (₹):</label>
+      <input type="number" name="planValue" value="${plan.planValue}" required>
 
-      <label for="planDuration">Plan Duration:</label>
-      <input type="text" id="planDuration" value="${plan.planDuration}" required>
+      <label>Plan Duration:</label>
+      <input type="text" name="planDuration" value="${plan.planDuration}" required>
 
-      <label for="planBanner">Plan Banner:</label>
-      <input type="file" id="planBanner" accept="image/*">
+      <label>Plan Banner:</label>
+      <input type="file" name="planBanner" accept="image/*">
 
-      <button type="submit" class="btn--update">Update Plan</button>
+      <button type="submit">Update Plan</button>
     </form>
   `;
+
+  cover.style.display = "flex";
 
   document.getElementById("updatePlanForm").addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -172,22 +160,21 @@ function updatePlanForm(plan) {
 
       if (response.ok) {
         alert("Plan updated successfully!");
-        fetchPlans();
         cover.style.display = "none";
+        fetchPlans();
       } else {
         const error = await response.json();
         alert(`Update failed: ${error.message}`);
       }
-    } catch (err) {
-      console.error("Error updating plan:", err);
+    } catch (error) {
+      console.error("Error updating plan:", error);
     }
   });
 }
 
 // ❌ Delete Plan
 async function deletePlan(planId) {
-  const confirmation = confirm("Are you sure you want to delete this plan?");
-  if (!confirmation) return;
+  if (!confirm("Are you sure you want to delete this plan?")) return;
 
   try {
     const response = await fetch(`https://tutorji.onrender.com/api/plans/delete/${planId}`, {
@@ -197,14 +184,12 @@ async function deletePlan(planId) {
     if (response.ok) {
       alert("Plan deleted successfully!");
       fetchPlans();
-      cover.style.display = "none";
     } else {
       const error = await response.json();
       alert(`Delete failed: ${error.message}`);
     }
-  } catch (err) {
-    console.error("Error deleting plan:", err);
-    alert("An unexpected error occurred.");
+  } catch (error) {
+    console.error("Error deleting plan:", error);
   }
 }
 
