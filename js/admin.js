@@ -142,7 +142,7 @@ async function fetchPlans() {
         }
         const update = document.querySelector(".updatePlan");
         const del = document.querySelector(".dltPlan");
-        const planId = localStorage.getItem('planId');
+        const planId = plan._id;
         const formData = new FormData();
         update.addEventListener("click", function () {
           cover.innerHTML = ``;
