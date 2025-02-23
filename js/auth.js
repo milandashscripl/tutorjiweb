@@ -1,75 +1,51 @@
-// document.getElementById('loginForm').addEventListener('submit', async (event) => {
-//     event.preventDefault();
-  
-//     const email = document.getElementById('email').value;
-//     const password = document.getElementById('password').value;
-    
-    
-//     const response = await fetch('https://tutorji.onrender.com/api/users/login', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({ email, password }),
-//     });
-  
-//     if (response.ok) {
-//       const data = await response.json();
-//       localStorage.setItem('token', data.token);
-//       localStorage.setItem('userId', data.userId);
-//       window.location.href = 'profile.html';
-//     } else {
-//       alert('Invalid login credentials');
-//     }
-//   });
-  
-
+// 🚀------------------- LOGIN FORM HANDLER -------------------🚀
 document.getElementById("loginForm").addEventListener("submit", async (event) => {
-  event.preventDefault(); // Prevent form submission refresh
+  event.preventDefault(); // Prevent page refresh on form submission
 
-  // Capture input values
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  // 🔑 Capture form input values
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
   const role = document.getElementById("role").value;
 
   try {
-    // Send login request to the backend
+    // 🌐 Send login request to backend
     const response = await fetch("https://tutorji.onrender.com/api/users/login", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
 
-    // Handle backend response
-    if (response.ok) {
-      const data = await response.json();
-
-      // Ensure role exists in the response
-      if (!data.user || !data.user.role) {
-        throw new Error("Invalid response from server: Role not defined.");
-      }
-
-      // Validate user role
-      if (data.user.role !== role) {
-        alert("Role mismatch. Please select the correct role.");
-        return;
-      }
-
-      // Save authentication details in localStorage
-      localStorage.setItem("token", data.token); // Save the token
-      localStorage.setItem("userId", data.user.id); // Save the user ID
-      localStorage.setItem("role", data.user.role); // Save the role
-
-      // Redirect based on role
-      if (role === "admin") {
-        window.location.href = "admin-dashboard.html"; // Admin dashboard page
-      } else if (role === "user") {
-        window.location.href = "index.html"; // User profile page
-      }
-    } else {
+    if (!response.ok) {
       const errorData = await response.json();
       alert(errorData.message || "Login failed. Please try again.");
+      return;
     }
+
+    const { token, user } = await response.json();
+
+    // 🛡️ Validate backend response
+    if (!user?.role) {
+      throw new Error("Invalid response from server: Role not defined.");
+    }
+
+    if (user.role !== role) {
+      alert("Role mismatch. Please select the correct role.");
+      return;
+    }
+
+    // 💾 Save authentication details in localStorage
+    localStorage.setItem("token", token);
+    localStorage.setItem("userId", user.id);
+    localStorage.setItem("role", user.role);
+
+    // 🚪 Redirect based on user role
+    const redirectMap = {
+      admin: "admin-dashboard.html",
+      user: "index.html",
+    };
+
+    window.location.href = redirectMap[role] || "index.html";
+
   } catch (error) {
     console.error("Login error:", error);
     alert("An error occurred during login. Please try again.");

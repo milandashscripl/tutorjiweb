@@ -1,26 +1,36 @@
+// 🚀------------------- USER REGISTRATION HANDLER -------------------🚀
 document.getElementById('registerForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-  
+  event.preventDefault(); // Prevent page refresh on form submission
+
+  try {
+    // 📝 Collect form inputs
     const formData = new FormData();
-    formData.append('name', document.getElementById('name').value);
-    formData.append('email', document.getElementById('email').value);
-    formData.append('contact', document.getElementById('contact').value);
-    formData.append('aadhar', document.getElementById('aadhar').value);
-    formData.append('address', document.getElementById('address').value);
-    formData.append('password', document.getElementById('password').value);
-    formData.append('position', document.getElementById('position').value);
-    formData.append('profilePicture', document.getElementById('profilePicture').files[0]);
-  
+    const fields = ['name', 'email', 'contact', 'aadhar', 'address', 'password', 'position'];
+    
+    fields.forEach((field) => {
+      const value = document.getElementById(field)?.value;
+      if (value) formData.append(field, value);
+    });
+
+    const profilePicture = document.getElementById('profilePicture')?.files[0];
+    if (profilePicture) formData.append('profilePicture', profilePicture);
+
+    // 🌐 Send registration request
     const response = await fetch('https://tutorji.onrender.com/api/users/register', {
       method: 'POST',
       body: formData,
     });
-  
+
+    // ✅ Handle response
     if (response.ok) {
-      alert('Registration successful! You can now log in.');
-      window.location.href = 'index.html';
+      alert('🎉 Registration successful! Redirecting to login...');
+      window.location.href = 'index.html'; // Redirect to login page
     } else {
-      alert('Registration failed!');
+      const errorData = await response.json();
+      alert(`❌ Registration failed: ${errorData.message || 'Please try again.'}`);
     }
-  });
-  
+  } catch (error) {
+    console.error('Registration Error:', error);
+    alert('🚫 An error occurred during registration. Please try again.');
+  }
+});
