@@ -164,7 +164,6 @@ async function fetchPlans() {
           document.getElementById("planName").value = plan.planName;
           document.getElementById("planValue").value = plan.planValue;
           document.getElementById("planDuration").value = plan.planDuration;
-          document.getElementById("planBanner").value = plan.planBanner;
 
 
           document.getElementById('updatePlanForm').addEventListener('submit', async (event) => {
@@ -211,7 +210,7 @@ async function fetchPlans() {
 
         // delete plan 
 
-        
+
         del.addEventListener("click", function () {
           cover.innerHTML = ``;
           cover.innerHTML = `      <div class="subsBox">
