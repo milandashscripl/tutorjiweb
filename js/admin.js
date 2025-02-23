@@ -193,7 +193,7 @@ async function fetchPlans() {
               if (response.ok) {
                 const data = await response.json();
                 alert('plan updated successfully!');
-                console.log('Updated user:', data.user);
+                console.log('Updated user:', data.plan);
                 window.location.href = '/admin-dashboard.html';
               } else {
                 const error = await response.json();
