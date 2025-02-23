@@ -175,7 +175,8 @@ function showUpdatePlanForm(plan) {
 
 // ❌ Delete Plan
 async function deletePlan(planId) {
-  if (!confirm("Are you sure you want to delete this plan?")) return;
+  const confirmation = confirm("Are you sure you want to delete this plan?");
+  if (!confirmation) return;
 
   try {
     const response = await fetch(`https://tutorji.onrender.com/api/plans/delete/${planId}`, {
@@ -184,15 +185,17 @@ async function deletePlan(planId) {
 
     if (response.ok) {
       alert("Plan deleted successfully!");
-      fetchPlans();
+      fetchPlans(); // Refresh plans list after deletion
     } else {
       const error = await response.json();
       alert(`Delete failed: ${error.message}`);
     }
-  } catch (error) {
-    console.error("Error deleting plan:", error);
+  } catch (err) {
+    console.error("Error deleting plan:", err);
+    alert("An unexpected error occurred.");
   }
 }
+
 
 // 🚀 Initial Load
 fetchPlans();
