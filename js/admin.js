@@ -113,10 +113,11 @@ function createPlanCard(plan) {
     <div class="plans__card__body">
       <h3>${plan.planName}</h3>
       <div class="card__plan">₹${plan.planValue} / ${plan.planDuration}</div>
-      <div class="plans__actions">
-        <button class="btn--update">Edit</button>
-        <button class="btn--dlt">Delete</button>
+      <div class="plans__actions card__footer">
+        <button class="btn--update card__footer__btn">Edit</button>
+        <button class="btn--dlt card__footer__btn">Delete</button>
       </div>
+
     </div>
   `;
 
