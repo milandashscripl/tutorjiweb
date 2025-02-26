@@ -195,6 +195,18 @@ img.slider__img{
      flex-direction: column;
      justify-content: space-between;
 }
+.message--card{
+    justify-content: start;
+    gap: 20px;
+    
+}
+.message--profilePic{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: grey;
+    border: 2px solid white;
+}
 @media screen and (max-width:760px) {
     .slider{
         height: max-content;
