@@ -199,6 +199,7 @@ img.slider__img{
     justify-content: start;
     gap: 20px;
     align-items: center;
+    padding: 10px;
 }
 .message__profilePic{
     height: 40px;
