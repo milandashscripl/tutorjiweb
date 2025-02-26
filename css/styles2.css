@@ -198,7 +198,7 @@ img.slider__img{
 .message--card{
     justify-content: start;
     gap: 20px;
-
+    align-items: center;
 }
 .message__profilePic{
     height: 40px;
