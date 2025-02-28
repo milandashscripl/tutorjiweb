@@ -116,3 +116,38 @@ async function fetchPlans() {
 
 // Fetch plans on page load
 fetchPlans();
+
+
+
+document.getElementById("queryForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const token = localStorage.getItem("token");
+  if (!token) return alert("Please log in first.");
+
+  const querrySubject = document.getElementById("subject").value;
+  const querryDetails = document.getElementById("details").value;
+
+  try {
+    const response = await fetch("https://tutorji.onrender.com/api/queries/submit", {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({ querrySubject, querryDetails })
+    });
+
+    if (response.ok) {
+      alert("Query submitted successfully!");
+      document.getElementById("queryForm").reset();
+    } else {
+      const error = await response.json();
+      alert(`Failed: ${error.message}`);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Server error, please try again.");
+  }
+});
+
