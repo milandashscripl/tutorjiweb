@@ -6,7 +6,7 @@ document.getElementById('sidebar').innerHTML = `
     <li><a href="inquiary.html"><i>❓</i> Queries</a></li>
     <li><a href="students.html"><i>🎓</i> Students</a></li>
     <li><a href="teachers.html"><i>👩‍🏫</i> Teachers</a></li>
-    <li><a href="test2.html"><i>📊</i> Analytics</a></li>
+    <li><a href="analytics.html"><i>📊</i> Analytics</a></li>
     <li>
       <div id="logout" class="logout-btn" style="background:orangered; color:white; padding:5px; width: 80%; text-align:center; margin:0 auto">Logout</div>
     </li>
