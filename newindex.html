@@ -169,7 +169,7 @@
         }
 
         .content {
-          bottom: -10%;
+          bottom: -40%;
         }
         .card {
           width: 80%;
@@ -205,9 +205,15 @@
     <div class="content">
       <div class="card">
         <h2>Sign In</h2>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button>Submit</button>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <select id="role" required style="margin: 0 0 20px 0; padding: 10px; border-radius: 5px;">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Login</button>
+          </form>
       </div>
     </div>
 
