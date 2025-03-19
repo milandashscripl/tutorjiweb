@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .nav__up {
+            background: black;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .nav__up span {
+            color: #008b8b;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 30px;
+            color: white;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+
+        .btn {
+            background-color: #008b8b;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating Bubbles */
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            background: rgba(0, 139, 139, 0.6);
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatUp 8s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-80vh);
+                opacity: 0;
+            }
+        }
+
+        /* Wave Design */
+        .wave-container {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            line-height: 0;
+        }
+
+        .wave-container svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* SIGNIN CARD */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            bottom: -25%;
+            transform: translateY(-50%);
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 5px 5px 20px #9999;
+            width: 40%;
+        }
+
+        .card h2 {
+            color: #008b8b;
+            margin-bottom: 15px;
+        }
+
+        .card input, .card select {
+            width: 90%;
+            border: 1px solid #ccc;
+            outline: none;
+            display: block;
+            margin: 30px auto;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .card button {
+            width: 95%;
+            border: none;
+            outline: none;
+            padding: 12px;
+            background-color: #008b8b;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #006666;
+        }
+
+        /* FOOTER SECTION */
+        footer {
+            background: #008b8b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 30vh 0 0;
+        }
+
+        
+
+        @media screen and (max-width: 760px) {
+          .header{
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+          }
+  
+       
+          .hero{
+            height: auto;
+          }
+          .content{
+            bottom: -10%;
+          }
+          .card{
+            width: 80%;
+          }
+          footer{
+            margin: 55vh 0 0;
+          }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav__up">
+        <p>
+            Install third-party Python packages on any plan.
+            <span>Get started for free now!</span>
+        </p>
+    </div>
+
+    <header class="header">
+        <div class="logo">NIAT</div>
+    </header>
+
+    <section class="hero">
+        
+        <div class="wave-container">
+            <svg viewBox="0 0 1440 320">
+                <path fill="#f5f5f5" fill-opacity="1"
+                    d="M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,197.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SIGNIN CARD -->
+    <div class="content">
+        <div class="card">
+            <h2>Sign In</h2>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Submit</button>
+        </div>
+    </div>
+
+    <footer>
+        <div>Copyright © 2025 NIAT. All rights reserved.</div>
+    </footer>
+<script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bubbleContainer = document.querySelector(".hero");
+            for (let i = 0; i < 10; i++) {
+                let bubble = document.createElement("div");
+                bubble.classList.add("bubble");
+                let size = Math.random() * 40 + 10;
+                let position = Math.random() * 100;
+                let duration = Math.random() * 5 + 5;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${position}%`;
+                bubble.style.animationDuration = `${duration}s`;
+                bubbleContainer.appendChild(bubble);
+            }
+        });
+    </script>
+
+</body>
+</html>
