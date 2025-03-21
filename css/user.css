@@ -200,7 +200,7 @@ h1.myHeadings {
   box-sizing: border-box;
 }
 
-.card button {
+.card .myBtn {
   width: 100%;
   border: none;
   outline: none;
@@ -216,6 +216,110 @@ h1.myHeadings {
 .card button:hover {
   background-color: #006666;
 }
+
+.plansContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;  /* Enable scrolling on mobile */
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap items on larger screens */
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for better aesthetics */
+.plansContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.planCard {
+  background: linear-gradient(135deg, #008b8b, #004d4d);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  max-width: 320px;
+  text-align: center;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out;
+  flex-shrink: 0; /* Prevents shrinking in scroll */
+}
+
+.planCard:hover {
+  transform: scale(1.05);
+}
+
+.card__header {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.card__header__banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plans__card__body {
+  padding: 15px;
+}
+
+.plans__card__body h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card__plan {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card__footer {
+  padding: 15px;
+}
+
+.card__footer__btn {
+  background: white;
+  color: #008b8b;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.card__footer__btn:hover {
+  background: #006666;
+  color: white;
+}
+
+/* 🌐 Responsive Design */
+
+/* Mobile View (Enable horizontal scroll) */
+@media screen and (max-width: 768px) {
+  .plansContainer {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+  }
+}
+
+/* Desktop View (Wrap items) */
+@media screen and (min-width: 769px) {
+  .plansContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
 
 footer {
   background: #006666;

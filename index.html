@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/user.css" />
   </head>
   <body>
     <div class="nav__up">
@@ -17,43 +17,42 @@
     <header class="header">
       <div class="web__logo">
         <div class="profileP">
-          <img src="" alt="" id="profilePicture">
+          <img src="" alt="" id="profilePicture" />
         </div>
         <div class="name" id="name">NIAT</div>
       </div>
-<!-- Hamburger Menu -->
-<div class="ham" onclick="toggleMenu()">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-</div>
+      <!-- Hamburger Menu -->
+      <div class="ham" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
 
-<!-- Navigation -->
-<nav id="navMenu">
-  <ul>
-    <li>
-      <a href="index.html"><i>🏠</i> Index</a>
-    </li>
-    <li>
-      <a href="profile.html"><i>👨</i> Your Profile</a>
-    </li>
-    <li>
-      <a href="update-profile.html"><i>✏</i> Edit Profile</a>
-    </li>
-    <li>
-      <div id="login" class="btn"></div>
-    </li>
-  </ul>
-</nav>
+      <!-- Navigation -->
+      <nav id="navMenu">
+        <ul>
+          <li>
+            <a href="index.html"><i>🏠</i> Index</a>
+          </li>
+          <li>
+            <a href="profile.html"><i>👨</i> Your Profile</a>
+          </li>
+          <li>
+            <a href="update-profile.html"><i>✏</i> Edit Profile</a>
+          </li>
+          <li>
+            <div id="login" class="btn"></div>
+          </li>
+        </ul>
+      </nav>
 
-<!-- JavaScript -->
-<script>
-  function toggleMenu() {
-    let nav = document.getElementById("navMenu");
-    nav.classList.toggle("active");
-  }
-</script>
-
+      <!-- JavaScript -->
+      <script>
+        function toggleMenu() {
+          let nav = document.getElementById("navMenu");
+          nav.classList.toggle("active");
+        }
+      </script>
     </header>
 
     <section class="hero">
@@ -71,27 +70,117 @@
     <!-- Content CARD -->
 
     <div class="content index-content">
-
       <div class="card padding--5">
-
         <h1 class="myHeadings">Your Subscriptions</h1>
         <div class="subscriptions" id=""></div>
-  
-        
+
         <h1 class="myHeadings" id="aboutHeadings">About</h1>
-        
+
         <h1 class="myHeadings">Membership Plans</h1>
- 
+
+        <div class="plansContainer" id="plansContainer">
+          <div class="planCard">
+            <div class="card__header">
+              <img
+                src="${plan.planBanner}"
+                alt="Plan Banner"
+                class="card__header__banner"
+              />
+            </div>
+            <div class="plans__card__body">
+              <h3 style="text-align: center">${plan.planName}</h3>
+              <div class="card__plan">
+                &#8377;${plan.planValue}/${plan.planDuration}
+              </div>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn btn--white">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="planCard">
+            <div class="card__header">
+              <img
+                src="${plan.planBanner}"
+                alt="Plan Banner"
+                class="card__header__banner"
+              />
+            </div>
+            <div class="plans__card__body">
+              <h3 style="text-align: center">${plan.planName}</h3>
+              <div class="card__plan">
+                &#8377;${plan.planValue}/${plan.planDuration}
+              </div>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn btn--white">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="planCard">
+            <div class="card__header">
+              <img
+                src="${plan.planBanner}"
+                alt="Plan Banner"
+                class="card__header__banner"
+              />
+            </div>
+            <div class="plans__card__body">
+              <h3 style="text-align: center">${plan.planName}</h3>
+              <div class="card__plan">
+                &#8377;${plan.planValue}/${plan.planDuration}
+              </div>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn btn--white">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="planCard">
+            <div class="card__header">
+              <img
+                src="${plan.planBanner}"
+                alt="Plan Banner"
+                class="card__header__banner"
+              />
+            </div>
+            <div class="plans__card__body">
+              <h3 style="text-align: center">${plan.planName}</h3>
+              <div class="card__plan">
+                &#8377;${plan.planValue}/${plan.planDuration}
+              </div>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn btn--white">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="planCard">
+            <div class="card__header">
+              <img
+                src="${plan.planBanner}"
+                alt="Plan Banner"
+                class="card__header__banner"
+              />
+            </div>
+            <div class="plans__card__body">
+              <h3 style="text-align: center">${plan.planName}</h3>
+              <div class="card__plan">
+                &#8377;${plan.planValue}/${plan.planDuration}
+              </div>
+            </div>
+            <div class="card__footer">
+              <button class="card__footer__btn btn--white">Subscribe</button>
+            </div>
+          </div>
+        </div>
         <h1 class="myHeadings" id="aboutHeadings">Our Students List</h1>
-        
-  
+
         <h1 class="myHeadings" id="aboutHeadings">Our Teachers List</h1>
-       
+
         <h1 class="myHeadings">Send Your Queries</h1>
       </div>
-      </div>
-
-
+    </div>
 
     <footer>
       <div>Copyright © 2025 NIAT. All rights reserved.</div>
