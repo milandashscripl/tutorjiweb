@@ -15,6 +15,9 @@
         margin: 0;
         padding: 0;
         background-color: #f5f5f5;
+        position: relative;
+        height: 100vh;
+        overflow-x: hidden;
       }
 
       .nav__up {
@@ -83,20 +86,22 @@
         color: #008b8b;
         margin-bottom: 15px;
       }
-      .card form{
-        width: 100%;
-      }
+      .card form {
+  width: 100%;
+}
 
-      .card input,
-      .card select {
-        display: block;
-        border: 1px solid #ccc;
-        outline: none;
-        display: block;
-        margin: 15px 0;
-        padding: 10px;
-        border-radius: 5px;
-      }
+.card input,
+.card select {
+  display: block;
+  width: 100%;  /* Full width inside the card */
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 10px 0;  /* Adjusted spacing */
+  padding: 12px;  /* Comfortable input padding */
+  border-radius: 5px;
+  font-size: 16px; /* Improved readability */
+  box-sizing: border-box;
+}
 
       .card button {
         width: 100%;
@@ -120,7 +125,10 @@
         color: white;
         text-align: center;
         padding: 20px;
-        position: relative;
+        position: absolute;
+        width: 100%;
+        bottom: -100%;
+        box-sizing: border-box;
       }
 
       @media screen and (max-width: 768px) {
@@ -128,9 +136,14 @@
           flex-direction: column;
           text-align: center;
         }
-
+        .hero{
+          min-height: 20vh;
+        }
         .content {
           margin-top: -30px;
+        }
+        footer{
+          bottom: -5%;
         }
       }
     </style>
