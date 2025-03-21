@@ -1,28 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <div class="mainBox">
-    <div class="container">
-      <h2> <span id="roleName"></span>Login</h2>
-      <form id="loginForm">
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <select id="role" required style="margin: 0 0 20px 0; padding: 10px; border-radius: 5px;">
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-        <button type="submit">Login</button>
-      </form>
-      <!-- <p>Don't have an account? <a href="register.html">Register here</a></p> -->
-    </div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
 
-  <script src="js/auth.js"></script>
-</body>
+      .nav__up {
+        background: black;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+
+      .nav__up span {
+        color: #008b8b;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 15px 30px;
+        color: white;
+      }
+
+      .header .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .hero {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        min-height: 80vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .wave-container {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        margin-top: -20%;
+      }
+
+      .card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 5px 5px 20px #9999;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .card h2 {
+        color: #008b8b;
+        margin-bottom: 15px;
+      }
+      .card form{
+        width: 100%;
+      }
+
+      .card input,
+      .card select {
+        display: block;
+        border: 1px solid #ccc;
+        outline: none;
+        display: block;
+        margin: 15px 0;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .card button {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 12px;
+        background-color: #008b8b;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .card button:hover {
+        background-color: #006666;
+      }
+
+      footer {
+        background: #008b8b;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+      }
+
+      @media screen and (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .content {
+          margin-top: -30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav__up">
+      <p>
+        Install third-party Python packages on any plan.
+        <span>Get started for free now!</span>
+      </p>
+    </div>
+
+    <header class="header">
+      <div class="logo">NIAT</div>
+    </header>
+
+    <section class="hero">
+      <div class="wave-container">
+        <svg viewBox="0 0 1440 320">
+          <path
+            fill="#f5f5f5"
+            fill-opacity="1"
+            d="M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,197.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <div class="content">
+      <div class="card">
+        <h2>Sign In</h2>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <select id="role" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div>Copyright © 2025 NIAT. All rights reserved.</div>
+    </footer>
+  </body>
 </html>

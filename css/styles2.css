@@ -2,12 +2,6 @@
 html{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.slider{
-    height: 60vh;
-    overflow: hidden;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
 h1.myHeadings {
     color: orangered;
     font-weight: 900;  /* Super bold */
@@ -17,10 +11,6 @@ h1.myHeadings {
     font-family: 'Montserrat', sans-serif;
 }
 
-img.slider__img{
-    width: 100%;
-    object-fit: scale-down;
-}
 .card{
     border-radius: 7px;
     box-shadow: 5px 5px 10px whitesmoke;

@@ -4,54 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/sidebar.css" />
-    <link rel="stylesheet" href="css/styles2.css" />
+    <link rel="stylesheet" href="css/user.css">
   </head>
   <body>
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-      <h2></h2>
-      <ul>
-        <li>
-          <a href="index.html"><i>🏠</i> Index</a>
-        </li>
-        <li>
-          <a href="profile.html"><i>👨</i> Your Profile</a>
-        </li>
-        <li>
-          <a href="update-profile.html"><i>✏ </i> Edit Profile</a>
-        </li>
-
-        <li>
-          <div id="login"></div>
-        </li>
-      </ul>
+    <div class="nav__up">
+      <p>
+        Install third-party Python packages on any plan.
+        <span>Get started for free now!</span>
+      </p>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <!-- Navbar -->
-      <div class="navbar" id="navbar">
-        <div class="toggler" id="toggler">&#9776;</div>
-        <div class="admin-info">
-          <img id="profilePicture" src="profilePic.png" alt="Profile Picture" />
-          <span id="name">Your Name</span>
-        </div>
-        <div class="search-bar">
-          <input type="text" placeholder="Search..." />
-          <button>Search</button>
-        </div>
+    <header class="header">
+      <div class="logo">NIAT</div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html"><i>🏠</i> Index</a>
+          </li>
+          <li>
+            <a href="profile.html"><i>👨</i> Your Profile</a>
+          </li>
+          <li>
+            <a href="update-profile.html"><i>✏ </i> Edit Profile</a>
+          </li>
+          <li>
+            <div id="login" class="btn">Login</div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wave-container">
+        <svg viewBox="0 0 1440 320">
+          <path
+            fill="#f5f5f5"
+            fill-opacity="1"
+            d="M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,197.3C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
       </div>
-      <!-- Content Area -->
-      <div class="content">
-        <div class="slider">
-          <img
-                src="1338701.png"
-                alt=""
-                class="slider__img"
-              />
-        </div>
+    </section>
+
+    <!-- Content CARD -->
+
+    <div class="content index-content">
+
+      <div class="card padding--5">
+
         <h1 class="myHeadings">Your Subscriptions</h1>
         <div class="card subscriptions padding--5 card--transparent" id="subscriptions">
         
@@ -73,7 +73,7 @@
             </div>
           </div> -->
         </div>
-
+  
         
         <h1 class="myHeadings" id="aboutHeadings">About</h1>
         <div class="card about padding--5 card--transparent" id="about">
@@ -93,10 +93,10 @@
         <h1 class="myHeadings" id="aboutHeadings">Our Students List</h1>
         <div class="card padding--5 card--transparent card--flex" id="studentsList">
           <i>No Students added yet...</i>
-
+  
           
         </div>
-
+  
         <h1 class="myHeadings" id="aboutHeadings">Our Teachers List</h1>
         <div class="card padding--5 card--transparent card--flex" id="teachersList">
           <i>No Teachers added yet...</i>
@@ -108,14 +108,14 @@
           <button type="submit">Submit</button>
         </form>
       </div>
-      <footer>
-        <div class="footer">
-          ©tutorjipathasala since 2024
-        </div>
-      </footer>
-    </div>
+      </div>
 
+
+
+    <footer>
+      <div>Copyright © 2025 NIAT. All rights reserved.</div>
+    </footer>
     <script src="js/script.js"></script>
-    <!-- <script src="js/queries.js"></script> -->
+    <script src="js/bubbles.js"></script>
   </body>
 </html>
