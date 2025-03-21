@@ -16,27 +16,39 @@
 
     <header class="header">
       <div class="logo">NIAT</div>
-      <div class="ham">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html"><i>🏠</i> Index</a>
-          </li>
-          <li>
-            <a href="profile.html"><i>👨</i> Your Profile</a>
-          </li>
-          <li>
-            <a href="update-profile.html"><i>✏ </i> Edit Profile</a>
-          </li>
-          <li>
-            <div id="login" class="btn">Login</div>
-          </li>
-        </ul>
-      </nav>
+<!-- Hamburger Menu -->
+<div class="ham" onclick="toggleMenu()">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+
+<!-- Navigation -->
+<nav id="navMenu">
+  <ul>
+    <li>
+      <a href="index.html"><i>🏠</i> Index</a>
+    </li>
+    <li>
+      <a href="profile.html"><i>👨</i> Your Profile</a>
+    </li>
+    <li>
+      <a href="update-profile.html"><i>✏</i> Edit Profile</a>
+    </li>
+    <li>
+      <div id="login" class="btn">Login</div>
+    </li>
+  </ul>
+</nav>
+
+<!-- JavaScript -->
+<script>
+  function toggleMenu() {
+    let nav = document.getElementById("navMenu");
+    nav.classList.toggle("active");
+  }
+</script>
+
     </header>
 
     <section class="hero">

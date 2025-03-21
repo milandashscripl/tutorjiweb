@@ -1,12 +1,12 @@
 // 🌐------------------- GLOBAL VARIABLES -------------------🌐
-const toggler = document.getElementById('toggler');
-const sidebar = document.getElementById('sidebar');
+const toggler = document.getElementById("toggler");
+// const sidebar = document.getElementById("sidebar");
 const plansContainer = document.getElementById("plansContainer");
 
 // 🚀------------------- 1. SIDEBAR TOGGLE FUNCTION -------------------🚀
-toggler.addEventListener('click', () => {
-  sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
-});
+// toggler.addEventListener("click", () => {
+//   sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
+// });
 
 // 🧑------------------- 2. USER PROFILE & AUTH HANDLING -------------------🧑
 document.addEventListener("DOMContentLoaded", async () => {
@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const response = await fetch(`https://tutorji.onrender.com/api/users/profile/${userId}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+      `https://tutorji.onrender.com/api/users/profile/${userId}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
 
     if (response.ok) {
       const user = await response.json();
@@ -28,11 +31,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Set Login/Logout Button
       const loginButton = document.getElementById("login");
       loginButton.textContent = "Logout";
-      loginButton.addEventListener('click', () => {
+      loginButton.addEventListener("click", () => {
         localStorage.clear();
-        window.location.href = 'index.html'; // Redirect to login page
+        window.location.href = "index.html"; // Redirect to login page
       });
-
     } else {
       showLoginPrompt();
     }
@@ -46,19 +48,24 @@ function showLoginPrompt() {
   alert("Please register or log in!");
   const loginButton = document.getElementById("login");
   loginButton.textContent = "Login";
-  loginButton.addEventListener('click', () => window.location.href = 'login.html');
+  loginButton.addEventListener(
+    "click",
+    () => (window.location.href = "login.html")
+  );
 }
 
 // 📚------------------- 3. FETCH & DISPLAY USERS -------------------📚
 async function fetchUsers(role, elementId) {
   try {
-    const response = await fetch(`https://tutorji.onrender.com/api/users/${role}`);
+    const response = await fetch(
+      `https://tutorji.onrender.com/api/users/${role}`
+    );
     const users = await response.json();
 
     const listElement = document.getElementById(elementId);
-    listElement.innerHTML = ''; // Clear previous content
+    listElement.innerHTML = ""; // Clear previous content
 
-    users.forEach(user => {
+    users.forEach((user) => {
       const userCard = `
         <div class="card studentsCard">
           <div class="studentsCard__pic">
@@ -72,15 +79,14 @@ async function fetchUsers(role, elementId) {
       `;
       listElement.innerHTML += userCard;
     });
-
   } catch (error) {
     console.error(`Error fetching ${role}:`, error);
   }
 }
 
 // Fetch and display students and teachers
-fetchUsers('students', 'studentsList');
-fetchUsers('teachers', 'teachersList');
+fetchUsers("students", "studentsList");
+fetchUsers("teachers", "teachersList");
 
 // 📝------------------- 4. FETCH & DISPLAY PLANS -------------------📝
 async function fetchPlans() {
@@ -90,7 +96,7 @@ async function fetchPlans() {
 
     plansContainer.innerHTML = ""; // Clear previous plans
 
-    plans.forEach(plan => {
+    plans.forEach((plan) => {
       const planCard = document.createElement("div");
       planCard.className = "card padding--0 plans__card";
       planCard.innerHTML = `
@@ -108,7 +114,6 @@ async function fetchPlans() {
 
       plansContainer.appendChild(planCard);
     });
-
   } catch (error) {
     console.error("Error fetching plans:", error);
   }
@@ -117,41 +122,42 @@ async function fetchPlans() {
 // Fetch plans on page load
 fetchPlans();
 
+document
+  .getElementById("queryForm")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
 
+    const token = localStorage.getItem("token");
+    if (!token) return alert("Please log in first.");
 
-document.getElementById("queryForm").addEventListener("submit", async (event) => {
-  event.preventDefault();
+    const querrySubject = document.getElementById("subject").value;
+    const querryDetails = document.getElementById("details").value;
 
-  const token = localStorage.getItem("token");
-  if (!token) return alert("Please log in first.");
+    try {
+      const response = await fetch(
+        "https://tutorji.onrender.com/api/queries/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ querrySubject, querryDetails }),
+        }
+      );
 
-  const querrySubject = document.getElementById("subject").value;
-  const querryDetails = document.getElementById("details").value;
-
-  try {
-    const response = await fetch("https://tutorji.onrender.com/api/queries/submit", {
-      method: "POST",
-      headers: { 
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify({ querrySubject, querryDetails })
-    });
-
-    if (response.ok) {
-      alert("Query submitted successfully!");
-      document.getElementById("queryForm").reset();
-    } else {
-      const error = await response.json();
-      alert(`Failed: ${error.message}`);
+      if (response.ok) {
+        alert("Query submitted successfully!");
+        document.getElementById("queryForm").reset();
+      } else {
+        const error = await response.json();
+        alert(`Failed: ${error.message}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Server error, please try again.");
     }
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Server error, please try again.");
-  }
-});
-
-
+  });
 
 document.addEventListener("DOMContentLoaded", function () {
   const bubbleContainer = document.querySelector(".hero");
@@ -168,3 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
     bubbleContainer.appendChild(bubble);
   }
 });
+
+function toggleMenu() {
+  let nav = document.getElementById("navMenu");
+  nav.classList.toggle("active");
+}
