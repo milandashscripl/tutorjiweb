@@ -44,8 +44,8 @@ body {
   align-items: center;
 }
 .profileP{
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   overflow: hidden;
 }
@@ -201,7 +201,7 @@ h1.myHeadings {
   border: none;
   outline: none;
   padding: 12px;
-  background-color: #008b8b;
+  background-color: #006666;
   color: white;
   font-size: 16px;
   border-radius: 5px;
