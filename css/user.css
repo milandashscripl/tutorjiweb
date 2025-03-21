@@ -34,8 +34,12 @@ body {
   color: white;
 }
 
-.header .logo, .header .name {
+.header .logo {
   font-size: 24px;
+  font-weight: bold;
+}
+.header .name{
+  font-size: small;
   font-weight: bold;
 }
 .web__logo{
