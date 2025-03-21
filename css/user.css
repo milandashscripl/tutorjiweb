@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
+*{
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background:  #f5f5f5;;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .nav__up {
@@ -31,89 +35,75 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
-
 nav ul{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    align-items: center;
+  display: flex;
+  list-style: none;
+  align-items: center;
 }
 nav ul li a{
-    text-decoration: none;
-    color: whitesmoke;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 0 10px;
 }
-.btn {
-  background-color: #008b8b;
-  color: white;
-  padding: 8px 15px;
-  border: none;
+#login{
+  padding: 10px 20px;
+  background: #006666;
+  border-radius: 20px;
   cursor: pointer;
-  border-radius: 5px;
+}
+#login:hover{
+  background: #008b8b;
+  scale: 1.07;
 }
 
-/* HERO SECTION */
 .hero {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 20px;
-  height: 90vh;
+  min-height: 80vh;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/* Floating Bubbles */
-.bubble {
-  position: absolute;
-  bottom: -50px;
-  background: rgba(0, 139, 139, 0.6);
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: floatUp 8s infinite linear;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
+   /* Floating Bubbles */
+   .bubble {
+    position: absolute;
+    bottom: -50px;
+    background: rgba(0, 139, 139, 0.6);
+    border-radius: 50%;
     opacity: 0.8;
+    animation: floatUp 8s infinite linear;
   }
-  100% {
-    transform: translateY(-80vh);
-    opacity: 0;
-  }
-}
 
-/* Wave Design */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-80vh);
+      opacity: 0;
+    }
+  }
+
+
 .wave-container {
   position: absolute;
-  bottom: -5px;
+  bottom: -10px;
   left: 0;
   width: 100%;
-  height: auto;
-  line-height: 0;
 }
 
-.wave-container svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* SIGNIN CARD */
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   width: 100%;
-  bottom: -25%;
-  transform: translateY(-50%);
-}
-.index-content{
-    flex-direction: column;
-    text-align: left;
-    align-items: center;
-    bottom: 0;
+  margin-top: -20%;
+  padding: 15px;
 }
 
 .card {
@@ -122,42 +112,74 @@ nav ul li a{
   border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 20px #9999;
-  width: 40%;
+  width: 100%;
+}
+.login__card{
+  
+  max-width: 400px;
 }
 
 .card h2 {
   color: #008b8b;
   margin-bottom: 15px;
 }
+.card form {
+width: 100%;
+}
 
-/* FOOTER SECTION */
+.card input,
+.card select {
+display: block;
+width: 100%;  /* Full width inside the card */
+border: 1px solid #ccc;
+outline: none;
+margin: 10px 0;  /* Adjusted spacing */
+padding: 12px;  /* Comfortable input padding */
+border-radius: 5px;
+font-size: 16px; /* Improved readability */
+box-sizing: border-box;
+}
+
+.card button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  background-color: #008b8b;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background-color: #006666;
+}
+
 footer {
   background: #008b8b;
   color: white;
   text-align: center;
   padding: 20px;
+  position: sticky;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0;
 }
 
-
-
-
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
-    justify-content: center;
     text-align: center;
-    align-items: center;
   }
-  nav{
-    width: 100%;
-  }
-  nav ul{
-    flex-direction: column;
+  .hero{
+    min-height: 20vh;
   }
   .content {
-    bottom: -40%;
+    margin-top: -30%;
   }
-  .card {
-    width: 80%;
+  footer{
+    position: absolute;
   }
 }
