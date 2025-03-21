@@ -1,11 +1,14 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background:  #f5f5f5;;
+  background: #f5f5f5;
   position: relative;
   height: 100vh;
   overflow-x: hidden;
@@ -35,27 +38,44 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
-nav ul{
+
+nav ul {
   display: flex;
   list-style: none;
   align-items: center;
 }
-nav ul li a{
+
+nav ul li a {
   text-decoration: none;
   color: whitesmoke;
   padding: 0 10px;
 }
-#login{
+
+#login {
   padding: 10px 20px;
   background: #006666;
   border-radius: 20px;
   cursor: pointer;
 }
-#login:hover{
+
+#login:hover {
   background: #008b8b;
   scale: 1.07;
 }
-
+.ham{
+  width: 25px;
+  height: 20px;
+  display: none;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+}
+.ham .line{
+  width: 100%;
+  height: 3px;
+  border-radius: 20px;
+  background: white;
+}
 .hero {
   background-color: #333;
   color: white;
@@ -66,27 +86,28 @@ nav ul li a{
   align-items: center;
   justify-content: center;
 }
-   /* Floating Bubbles */
-   .bubble {
-    position: absolute;
-    bottom: -50px;
-    background: rgba(0, 139, 139, 0.6);
-    border-radius: 50%;
+
+/* Floating Bubbles */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(0, 139, 139, 0.6);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatUp 8s infinite linear;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
     opacity: 0.8;
-    animation: floatUp 8s infinite linear;
   }
 
-  @keyframes floatUp {
-    0% {
-      transform: translateY(0);
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(-80vh);
-      opacity: 0;
-    }
+  100% {
+    transform: translateY(-80vh);
+    opacity: 0;
   }
-
+}
 
 .wave-container {
   position: absolute;
@@ -114,8 +135,15 @@ nav ul li a{
   box-shadow: 5px 5px 20px #9999;
   width: 100%;
 }
-.login__card{
-  
+h1.myHeadings {
+  color: #006666;
+  font-weight: 900;  /* Super bold */
+  text-transform: uppercase;  /* Makes it all caps for a stronger impact */
+  letter-spacing: 2px;  /* Adds spacing for a stylish look */
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+.login__card {
   max-width: 400px;
 }
 
@@ -123,21 +151,26 @@ nav ul li a{
   color: #008b8b;
   margin-bottom: 15px;
 }
+
 .card form {
-width: 100%;
+  width: 100%;
 }
 
 .card input,
 .card select {
-display: block;
-width: 100%;  /* Full width inside the card */
-border: 1px solid #ccc;
-outline: none;
-margin: 10px 0;  /* Adjusted spacing */
-padding: 12px;  /* Comfortable input padding */
-border-radius: 5px;
-font-size: 16px; /* Improved readability */
-box-sizing: border-box;
+  display: block;
+  width: 100%;
+  /* Full width inside the card */
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 10px 0;
+  /* Adjusted spacing */
+  padding: 12px;
+  /* Comfortable input padding */
+  border-radius: 5px;
+  font-size: 16px;
+  /* Improved readability */
+  box-sizing: border-box;
 }
 
 .card button {
@@ -158,7 +191,7 @@ box-sizing: border-box;
 }
 
 footer {
-  background: #008b8b;
+  background: #006666;
   color: white;
   text-align: center;
   padding: 20px;
@@ -173,13 +206,25 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-  .hero{
+
+  .hero {
     min-height: 20vh;
   }
+  .ham{
+    display: flex;
+  }
+  nav ul{
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .content {
     margin-top: -30%;
   }
-  footer{
+
+  footer {
     position: absolute;
   }
 }
