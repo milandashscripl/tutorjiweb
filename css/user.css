@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
 }
+.padding--0{
+  padding: 0;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -236,7 +239,7 @@ h1.myHeadings {
   display: none;
 }
 
-.planCard {
+.plans__card {
   background: linear-gradient(135deg, #008b8b, #004d4d);
   color: white;
   border-radius: 15px;
