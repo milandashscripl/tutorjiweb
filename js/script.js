@@ -98,7 +98,7 @@ async function fetchPlans() {
 
     plans.forEach((plan) => {
       const planCard = document.createElement("div");
-      planCard.className = "card padding--0 plans__card";
+      planCard.className = "card  plans__card card--padding0";
       planCard.innerHTML = `
         <div class="card__header">
           <img src="${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
