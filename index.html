@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
     <link rel="stylesheet" href="css/user.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
     <div class="nav__up">
@@ -74,49 +75,10 @@
         <!-- <h1 class="myHeadings">Your Subscriptions</h1>
         <div class="subscriptions" id=""></div> -->
 
-        
         <h1 class="myHeadings">Membership Plans</h1>
-        
+
         <div class="plansContainer" id="plansContainer">
-          <div class="planCard">
-            <div class="card__header">
-              <img
-              src="${plan.planBanner}"
-              alt="Plan Banner"
-                class="card__header__banner"
-              />
-            </div>
-            <div class="plans__card__body">
-              <h3 style="text-align: center">${plan.planName}</h3>
-              <div class="card__plan">
-                &#8377;${plan.planValue}/${plan.planDuration}
-              </div>
-            </div>
-            <div class="card__footer">
-              <button class="card__footer__btn btn--white">Subscribe</button>
-            </div>
-          </div>
-          
-          <div class="planCard">
-            <div class="card__header">
-              <img
-                src="${plan.planBanner}"
-                alt="Plan Banner"
-                class="card__header__banner"
-                />
-            </div>
-            <div class="plans__card__body">
-              <h3 style="text-align: center">${plan.planName}</h3>
-              <div class="card__plan">
-                &#8377;${plan.planValue}/${plan.planDuration}
-              </div>
-            </div>
-            <div class="card__footer">
-              <button class="card__footer__btn btn--white">Subscribe</button>
-            </div>
-          </div>
-          
-          <div class="planCard">
+          <div class="planCard" data-aos="flip-left">
             <div class="card__header">
               <img
                 src="${plan.planBanner}"
@@ -127,44 +89,6 @@
             <div class="plans__card__body">
               <h3 style="text-align: center">${plan.planName}</h3>
               <div class="card__plan">
-                &#8377;${plan.planValue}/${plan.planDuration}
-              </div>
-            </div>
-            <div class="card__footer">
-              <button class="card__footer__btn btn--white">Subscribe</button>
-            </div>
-          </div>
-
-          <div class="planCard">
-            <div class="card__header">
-              <img
-              src="${plan.planBanner}"
-              alt="Plan Banner"
-              class="card__header__banner"
-              />
-            </div>
-            <div class="plans__card__body">
-              <h3 style="text-align: center">${plan.planName}</h3>
-              <div class="card__plan">
-                &#8377;${plan.planValue}/${plan.planDuration}
-              </div>
-            </div>
-            <div class="card__footer">
-              <button class="card__footer__btn btn--white">Subscribe</button>
-            </div>
-          </div>
-
-          <div class="planCard">
-            <div class="card__header">
-              <img
-                src="${plan.planBanner}"
-                alt="Plan Banner"
-                class="card__header__banner"
-                />
-              </div>
-              <div class="plans__card__body">
-                <h3 style="text-align: center">${plan.planName}</h3>
-                <div class="card__plan">
                 &#8377;${plan.planValue}/${plan.planDuration}
               </div>
             </div>
@@ -174,9 +98,9 @@
           </div>
         </div>
         <h1 class="myHeadings" id="aboutHeadings">Our Students</h1>
-        
+
         <h1 class="myHeadings" id="aboutHeadings">Our Teachers</h1>
-        
+
         <h1 class="myHeadings" id="aboutHeadings">About</h1>
         <h1 class="myHeadings">Queries</h1>
       </div>
@@ -187,5 +111,9 @@
     </footer>
     <script src="js/script.js"></script>
     <script src="js/bubbles.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
