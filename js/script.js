@@ -101,7 +101,7 @@ async function fetchPlans() {
       planCard.className = "card  plans__card card--padding0";
 
       planCard.setAttribute("data-aos", "flip-left"); // AOS animation
-      planCard.setAttribute("data-aos-delay", `${index * 100}`); // Staggered animation delay
+      planCard.setAttribute("data-aos-delay", `${index * 10}`); // Staggered animation delay
       planCard.innerHTML = `
         <div class="card__header">
           <img src="${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
