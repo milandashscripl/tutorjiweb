@@ -294,7 +294,7 @@ h1.myHeadings {
 
 .card__footer__btn {
   background: white;
-  color: #008b8b;
+  color: #004d4d;
   padding: 10px 20px;
   border-radius: 20px;
   font-weight: bold;
@@ -304,7 +304,7 @@ h1.myHeadings {
 }
 
 .card__footer__btn:hover {
-  background: #006666;
+  background: #008b8b;
   color: white;
 }
 
