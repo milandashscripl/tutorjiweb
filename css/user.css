@@ -320,6 +320,9 @@ h1.myHeadings {
   .plans__card {
     width: 90%;
   }
+  .nav__up span {
+    display: block;
+  }
 }
 
 /* Desktop View (Wrap items) */
