@@ -272,6 +272,7 @@ h1.myHeadings {
 .plans__card__body {
   padding: 15px;
   background: whitesmoke;
+  color: #004d4d;
 }
 
 .plans__card__body h3 {
@@ -330,7 +331,7 @@ h1.myHeadings {
 
 
 footer {
-  background: #006666;
+  background: #004d4d;
   color: white;
   text-align: center;
   padding: 20px;
