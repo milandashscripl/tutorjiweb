@@ -171,6 +171,7 @@ h1.myHeadings {
   /* Adds spacing for a stylish look */
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
+  font-size: x-large;
 }
 
 .login__card {
