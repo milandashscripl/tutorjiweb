@@ -172,6 +172,7 @@ h1.myHeadings {
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
   font-size: x-large;
+  text-align: left;
 }
 
 .login__card {
