@@ -340,6 +340,14 @@ h1.myHeadings {
   color: #008b8b;
   font-weight: bold;
 }
+textarea{
+  width: 100%;
+  min-height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  outline: none;
+  border: 2px double #004d4d;
+}
 /* 🌐 Responsive Design */
 
 /* Mobile View (Enable horizontal scroll) */
