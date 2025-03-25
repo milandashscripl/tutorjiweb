@@ -222,7 +222,7 @@ h1.myHeadings {
   background-color: #006666;
 }
 
-.plansContainer {
+.plansContainer, .studentsList, .teachersList {
   display: flex;
   gap: 20px;
   padding: 20px;
@@ -307,6 +307,20 @@ h1.myHeadings {
   color: white;
 }
 
+.studentsCard{
+  width: 45%;
+  padding: 10px;
+}
+.studentsCard__pic{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.studentsCard__pic img{
+  height: 100%;
+  width: 100%;
+}
 /* 🌐 Responsive Design */
 
 /* Mobile View (Enable horizontal scroll) */
