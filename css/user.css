@@ -333,13 +333,13 @@ h1.myHeadings {
 
 /* Mobile View (Enable horizontal scroll) */
 @media screen and (max-width: 768px) {
-  .plansContainer {
+  .plansContainer, .studentsList, .teachersList {
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
   }
-  .plans__card {
+  .plans__card, .studentsCard, .teachersList {
     width: 90%;
   }
   .nav__up span {
