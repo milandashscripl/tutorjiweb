@@ -315,7 +315,7 @@ h1.myHeadings {
   justify-content: center;
   gap: 10px;
   box-sizing: border-box;
-  background: linear-gradient(to right, white 50%, #004d4d 50%);
+  border-right: 5px solid #004d4d;
 }
 .studentsCard__pic{
   height: 50px;
