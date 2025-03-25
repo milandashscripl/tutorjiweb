@@ -308,8 +308,13 @@ h1.myHeadings {
 }
 
 .studentsCard{
-  width: 45%;
+  width: 48%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
 }
 .studentsCard__pic{
   height: 50px;
@@ -320,6 +325,9 @@ h1.myHeadings {
 .studentsCard__pic img{
   height: 100%;
   width: 100%;
+}
+.studentsCard li{
+  font-size: small;
 }
 /* 🌐 Responsive Design */
 

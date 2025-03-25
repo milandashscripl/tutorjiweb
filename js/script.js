@@ -72,8 +72,8 @@ async function fetchUsers(role, elementId) {
             <img src="${user.profilePicture}" alt="Profile Picture">
           </div>
           <ul>
-            <li><strong>Name:</strong> ${user.name}</li>
-            <li><strong>Address:</strong> ${user.address}</li>
+            <li> ${user.name}</li>
+            <li> ${user.address}</li>
           </ul>
         </div>
       `;
