@@ -308,7 +308,6 @@ h1.myHeadings {
 }
 
 .studentsCard{
-  width: 48%;
   padding: 30px;
   display: flex;
   align-items: center;
@@ -332,9 +331,6 @@ h1.myHeadings {
   font-size: small;
   list-style: none;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 /* 🌐 Responsive Design */
 
