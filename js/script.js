@@ -57,32 +57,47 @@ function showLoginPrompt() {
 // 📚------------------- 3. FETCH & DISPLAY USERS -------------------📚
 async function fetchUsers(role, elementId) {
   try {
-    const response = await fetch(
-      `https://tutorji.onrender.com/api/users/${role}`
-    );
+    const response = await fetch(`https://tutorji.onrender.com/api/users/${role}`);
     const users = await response.json();
 
     const listElement = document.getElementById(elementId);
     listElement.innerHTML = ""; // Clear previous content
 
-    users.forEach((user) => {
-      const userCard = `
-        <div class="card studentsCard">
-          <div class="studentsCard__pic">
-            <img src="${user.profilePicture}" alt="Profile Picture">
-          </div>
-          <ul>
-            <li> ${user.name}</li>
-            <li> ${user.address}</li>
-          </ul>
+    users.forEach((user, index) => {
+      const userCard = document.createElement("div");
+      userCard.className = "card studentsCard";
+
+      // Add AOS attributes for flip animation
+      userCard.setAttribute("data-aos", "flip-left"); // Flip effect
+      userCard.setAttribute("data-aos-duration", "1000"); // Animation speed
+      userCard.setAttribute("data-aos-delay", `${index * 100}`); // Staggered delay
+
+      userCard.innerHTML = `
+        <div class="studentsCard__pic">
+          <img src="${user.profilePicture}" alt="Profile Picture">
         </div>
+        <ul>
+          <li>${user.name}</li>
+          <li>${user.address}</li>
+        </ul>
       `;
-      listElement.innerHTML += userCard;
+
+      listElement.appendChild(userCard);
     });
+
+    // Reinitialize AOS after adding new elements
+    AOS.init();
+    
   } catch (error) {
     console.error(`Error fetching ${role}:`, error);
   }
 }
+
+// Initialize AOS on Page Load
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init();
+});
+
 
 // Fetch and display students and teachers
 fetchUsers("students", "studentsList");
