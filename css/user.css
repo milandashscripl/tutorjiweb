@@ -308,6 +308,7 @@ h1.myHeadings {
 }
 
 .studentsCard{
+  width: max-content;
   padding: 30px;
   display: flex;
   align-items: center;
@@ -342,10 +343,8 @@ h1.myHeadings {
     justify-content: flex-start;
     scroll-snap-type: x mandatory;
   }
-  .plans__card, .studentsCard, .teachersList {
+  .plans__card {
     width: 90%;
-  }
-  .teachersCard .studentsCard__pic{
   }
   .nav__up span {
     display: block;
