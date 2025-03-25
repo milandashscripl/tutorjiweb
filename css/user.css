@@ -334,6 +334,11 @@ h1.myHeadings {
   list-style: none;
   text-align: left;
 }
+.about__container{
+  font-family: cursive;
+  text-align: left;
+  color: #008b8b;
+}
 /* 🌐 Responsive Design */
 
 /* Mobile View (Enable horizontal scroll) */
