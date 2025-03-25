@@ -332,6 +332,9 @@ h1.myHeadings {
   font-size: small;
   list-style: none;
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* 🌐 Responsive Design */
 
@@ -345,6 +348,8 @@ h1.myHeadings {
   }
   .plans__card, .studentsCard, .teachersList {
     width: 90%;
+  }
+  .teachersCard .studentsCard__pic{
   }
   .nav__up span {
     display: block;
