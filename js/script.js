@@ -116,6 +116,10 @@ async function fetchPlans() {
 
       plansContainer.appendChild(planCard);
     });
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init();
+    });
+    
   } catch (error) {
     console.error("Error fetching plans:", error);
   }
