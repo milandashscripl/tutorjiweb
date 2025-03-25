@@ -96,9 +96,14 @@ async function fetchPlans() {
 
     plansContainer.innerHTML = ""; // Clear previous plans
 
-    plans.forEach((plan) => {
+    plans.forEach((plan, index) => {
       const planCard = document.createElement("div");
-      planCard.className = "card  plans__card card--padding0";
+      planCard.className = "card plans__card card--padding0";
+      
+      // Add AOS attributes for animation
+      planCard.setAttribute("data-aos", "fade-up"); // Animation type
+      planCard.setAttribute("data-aos-delay", `${index * 100}`); // Staggered animation delay
+
       planCard.innerHTML = `
         <div class="card__header">
           <img src="${plan.planBanner}" alt="Plan Banner" class="card__header__banner" />
@@ -114,11 +119,20 @@ async function fetchPlans() {
 
       plansContainer.appendChild(planCard);
     });
+
+    // Reinitialize AOS after adding new elements
+    AOS.init();
     
   } catch (error) {
     console.error("Error fetching plans:", error);
   }
 }
+
+// Initialize AOS on Page Load
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init();
+});
+
 
 // Fetch plans on page load
 fetchPlans();
