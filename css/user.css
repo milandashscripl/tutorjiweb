@@ -252,7 +252,7 @@ h1.myHeadings {
   flex-shrink: 0; /* Prevents shrinking in scroll */
 }
 
-.plans__card:hover {
+.plans__card:hover, .teachersCard:hover, .studentsCard:hover {
   transform: scale(1.05);
 }
 
@@ -309,7 +309,7 @@ h1.myHeadings {
 
 .studentsCard{
   width: 48%;
-  padding: 10px;
+  padding: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,6 +328,8 @@ h1.myHeadings {
 }
 .studentsCard li{
   font-size: small;
+  list-style: none;
+  text-align: left;
 }
 /* 🌐 Responsive Design */
 
