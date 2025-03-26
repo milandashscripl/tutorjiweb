@@ -401,6 +401,9 @@ textarea{
   .nav__up span {
     display: block;
   }
+  .about__container{
+    font-weight: 900;
+  }
 }
 
 /* Desktop View (Wrap items) */
