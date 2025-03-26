@@ -131,5 +131,46 @@
     <script>
       AOS.init();
     </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          AOS.init(); // Initialize AOS animations
+          loadGallery();
+        });
+    
+        function loadGallery() {
+          const imageGallery = [
+      "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg",
+      "https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg",
+      "https://images.pexels.com/photos/34950/pexels-photo.jpg",
+      "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg",
+      "https://images.pexels.com/photos/35600/road-sun-rays-path.jpg",
+      "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+      "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg",
+      "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg",
+      "https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg",
+      "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg",
+      "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg"
+    ];
+    
+          const galleryContainer = document.getElementById("gallery");
+          galleryContainer.innerHTML = "";
+    
+          imageGallery.forEach((src, index) => {
+            const galleryItem = document.createElement("div");
+            galleryItem.className = "gallery-item";
+            
+            // Add AOS Animation
+            galleryItem.setAttribute("data-aos", "zoom-in");
+            galleryItem.setAttribute("data-aos-duration", "800");
+            galleryItem.setAttribute("data-aos-delay", `${index * 100}`);
+    
+            galleryItem.innerHTML = `<img src="${src}" alt="Gallery Image">`;
+            galleryContainer.appendChild(galleryItem);
+          });
+    
+          AOS.refresh(); // Refresh AOS to apply animations
+        }
+      </script>
   </body>
 </html>
