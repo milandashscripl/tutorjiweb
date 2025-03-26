@@ -170,7 +170,7 @@ h1.myHeadings {
   letter-spacing: 2px;
   /* Adds spacing for a stylish look */
   padding: 10px 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Boldonse", system-ui;
   font-size: x-large;
   text-align: left;
 }
@@ -335,10 +335,13 @@ h1.myHeadings {
   text-align: left;
 }
 .about__container{
-  font-family: cursive;
+  font-family: "Italiana", sans-serif;
   text-align: left;
-  color: #008b8b;
+  color: #004d4d90;
   font-weight: bold;
+  font-weight: 100;
+  font-size: small;
+  line-height: 25px;
 }
 textarea{
   width: 100%;
@@ -348,7 +351,16 @@ textarea{
   outline: none;
   border: 2px double #004d4d;
 }
-
+.banner{
+  max-height: 70vh;
+  overflow: hidden;
+  background: red;
+  margin: 20px 0;
+}
+.banner img{
+  height: 100%;
+  width: 100%;
+}
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
