@@ -5,7 +5,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
   try {
     // 📝 Collect form inputs
     const formData = new FormData();
-    const fields = ['name', 'email', 'contact', 'aadhar', 'address', 'password', 'position'];
+    const fields = ['name', 'email', 'contact', 'aadhar', 'address', 'password', 'campusName', 'seatNumber', 'position'];
     
     fields.forEach((field) => {
       const value = document.getElementById(field)?.value;
@@ -27,7 +27,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
       window.location.href = 'index.html'; // Redirect to login page
     } else {
       const errorData = await response.json();
-      alert(`❌ Registration failed: ${errorData.message || 'Please try again.'}`);
+      alert(`❌ Registration failed: ${errorData.error || 'Please try again.'}`);
     }
   } catch (error) {
     console.error('Registration Error:', error);
