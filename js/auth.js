@@ -5,7 +5,6 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
   // 🔑 Capture form input values
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
-  const role = document.getElementById("role").value;
 
   try {
     // 🌐 Send login request to backend
@@ -17,34 +16,38 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
 
     if (!response.ok) {
       const errorData = await response.json();
-      alert(errorData.message || "Login failed. Please try again.");
+      alert(errorData.error || "Login failed. Please try again.");
       return;
     }
 
     const { token, user } = await response.json();
 
     // 🛡️ Validate backend response
-    if (!user?.role) {
-      throw new Error("Invalid response from server: Role not defined.");
-    }
-
-    if (user.role !== role) {
-      alert("Role mismatch. Please select the correct role.");
-      return;
+    if (!user?.position) {
+      throw new Error("Invalid response from server: Position not defined.");
     }
 
     // 💾 Save authentication details in localStorage
     localStorage.setItem("token", token);
     localStorage.setItem("userId", user.id);
-    localStorage.setItem("role", user.role);
+    localStorage.setItem("name", user.name);
+    localStorage.setItem("email", user.email);
+    localStorage.setItem("contact", user.contact);
+    localStorage.setItem("aadhar", user.aadhar);
+    localStorage.setItem("address", user.address);
+    localStorage.setItem("campusName", user.campusName);
+    localStorage.setItem("seatNumber", user.seatNumber);
+    localStorage.setItem("position", user.position);
+    localStorage.setItem("profilePicture", user.profilePicture);
 
-    // 🚪 Redirect based on user role
+    // 🚪 Redirect based on user position
     const redirectMap = {
       admin: "admin-dashboard.html",
-      user: "index.html",
+      teacher: "teacher-dashboard.html",
+      student: "student-dashboard.html",
     };
 
-    window.location.href = redirectMap[role] || "index.html";
+    window.location.href = redirectMap[user.position] || "index.html";
 
   } catch (error) {
     console.error("Login error:", error);
