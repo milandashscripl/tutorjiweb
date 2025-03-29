@@ -16,40 +16,23 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
 
     if (!response.ok) {
       const errorData = await response.json();
-      alert(errorData.error || "Login failed. Please try again.");
+      alert(errorData.message || "❌ Login failed. Please try again.");
       return;
     }
 
-    const { token, user } = await response.json();
-
-    // 🛡️ Validate backend response
-    if (!user?.position) {
-      throw new Error("Invalid response from server: Position not defined.");
-    }
+    // ✅ Extract token & user details from response
+    const { token, user, userId } = await response.json();
 
     // 💾 Save authentication details in localStorage
     localStorage.setItem("token", token);
-    localStorage.setItem("userId", user.id);
-    localStorage.setItem("name", user.name);
-    localStorage.setItem("email", user.email);
-    localStorage.setItem("contact", user.contact);
-    localStorage.setItem("aadhar", user.aadhar);
-    localStorage.setItem("address", user.address);
-    localStorage.setItem("campusName", user.campusName);
-    localStorage.setItem("seatNumber", user.seatNumber);
-    localStorage.setItem("profilePicture", user.profilePicture);
+    localStorage.setItem("userId", userId);
+    localStorage.setItem("user", JSON.stringify(user));
 
-    // 🚪 Redirect based on user position
-    const redirectMap = {
-      admin: "admin-dashboard.html",
-      teacher: "teacher-dashboard.html",
-      student: "student-dashboard.html",
-    };
-
-    window.location.href = redirectMap[user.position] || "index.html";
+    // 🚀 Redirect to user dashboard after login
+    window.location.href = "index.html"; 
 
   } catch (error) {
     console.error("Login error:", error);
-    alert("An error occurred during login. Please try again.");
+    alert("🚫 An error occurred during login. Please try again.");
   }
 });
