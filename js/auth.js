@@ -37,7 +37,6 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
     localStorage.setItem("address", user.address);
     localStorage.setItem("campusName", user.campusName);
     localStorage.setItem("seatNumber", user.seatNumber);
-    localStorage.setItem("position", user.position);
     localStorage.setItem("profilePicture", user.profilePicture);
 
     // 🚪 Redirect based on user position
