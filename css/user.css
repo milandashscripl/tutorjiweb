@@ -154,10 +154,9 @@ nav ul li a {
 
 .card {
   background-color: white;
-  padding: 20px;
   border-radius: 10px;
   text-align: center;
-  padding: 15px 15%;
+  padding: 15px 10%;
   box-shadow: 5px 5px 20px #9999;
   width: 100%;
 }
