@@ -31,7 +31,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
     // 🚀 Redirect to user dashboard after login
     window.location.href = "index.html"; 
 
-  } catch (error) {
+  } catch (error) {/
     console.error("Login error:", error);
     alert("🚫 An error occurred during login. Please try again.");
   }

@@ -148,8 +148,8 @@ nav ul li a {
   align-items: center;
   position: relative;
   width: 100%;
-  margin-top: -20%;
   padding: 15px;
+  margin-top: -20%;
 }
 
 .card {
@@ -157,6 +157,7 @@ nav ul li a {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  padding: 15px 15%;
   box-shadow: 5px 5px 20px #9999;
   width: 100%;
 }
@@ -421,7 +422,6 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  position: sticky;
   width: 100%;
   box-sizing: border-box;
   bottom: 0;
